@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>도서정보 입력</title>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+<body>
+	
+	<div id="text">여기에 내용을 입력합니다</div>
+	
+	<button id="loadBtn">데이터 불러들이기</button>
+
+<script>
+	/* p.491 제이쿼리Ajax (에이잭스, 에이작스, 애작스~) */
+	/* .load(url,[,data][,complete]); 
+		$.ajax();
+	*/
+	
+	$(window).on({
+		keyup:function(e){
+			console.log(e.getKeyCode()); // 엔터, spacebar,...
+			if(엔터값 == 13) {
+				
+			}
+		}
+	})
+	var query = {
+			no : 
+	}
+	$("#loadBtn").click(function(){
+		$.ajax({
+			type: "POST",
+			url: "bookinfo.jsp",
+			data: query,
+			success:function(status){
+				console.log(status.statusText);
+			}
+		})
+		// text, html, xml, json 데이터를 요청~ #text 입력!
+// 		console.log("load 실행");
+// 		$("#text").load("data.json");
+	});
+</script>	
+</body>
+</html>
+
+
+
+

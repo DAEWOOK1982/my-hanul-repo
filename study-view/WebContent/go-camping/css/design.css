@@ -1,0 +1,120 @@
+@charset "UTF-8";
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	font: 16px/1.5 "Noto Sans KR",sans-serif;
+	color: #191919;
+}
+
+a, a:link {
+	text-decoration: none;
+	color: inherit;
+}
+
+form {
+	margin: 0;
+	padding: 0;
+}
+
+
+/* header design */
+.header-wrap {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex; /* 표시 : 플렉스 */
+	justify-content: space-between; /* 주축(가로,row) 정렬 : 공간균등*/
+	align-items: center; /* 교차축(세로,column) 정렬 : 세로 가운데 */
+}
+#gnb {
+	display: flex;
+	margin-left: auto;
+}
+#gnb > li {
+	margin: 0 20px;
+}
+#search {
+	vertical-align: top;
+	height: 40px;
+}
+#search input {
+	float: left; /* 플로팅(띄운다) : 왼쪽으로~ */
+}
+#searchKey {
+	width: 150px;
+	height: 40px;
+	border-radius: 40px; /* 모퉁이 : 반경(둥글게) */
+	border-style: solid;
+	margin-right: 5px;
+}
+
+/* big-img visual */
+.big-img {
+	height: 400px;
+	overflow: hidden; /* 넘치면 : 숨겨요~ */
+	/* position: relative; */
+	background: url("../images/visual.jpg") center bottom / cover;
+	position: relative; /* 위치 : 상대적인 기준 */
+}
+.big-img > p {
+	color: white;
+	font-size: 1.250rem; 
+	letter-spacing: .5rem;
+	position: absolute; /* 위치 : 절대적인 기준 */
+	left: 30%;
+	top: 40%;	
+}
+/*
+.big-img figure {
+	 margin-top: -700px; 
+}
+*/
+/* .big-img figure {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top:50%;
+	left: 50%;
+	transform: translate(-50%,-70%);
+	padding-bottom: 56.25%;
+	
+} */
+.big-img img { /* 화면 폭에 최대한 맞춰! 크거나 작으면 알아서~ */
+	max-width: 100%;	
+}
+
+
+
+/* footer design */
+footer hr {
+	margin: 50px 0 30px;
+}
+.footer-wrap {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+#sns {
+	display: flex;
+}
+#sns > li {
+	margin: 0 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

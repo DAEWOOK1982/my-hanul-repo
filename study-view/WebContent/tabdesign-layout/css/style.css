@@ -1,0 +1,124 @@
+@charset "UTF-8";
+
+body {
+	/* 사진을 늘려서 화면에 맞게 맞춤 */
+	background: url("../images/bg.jpg") no-repeat center / cover;
+	height: 2000px;	
+	font: 16px/1.5 "Noto Sans KR", sans-serif;
+	color: #191919;
+}
+a, a:link {
+	text-decoration: none;
+	color: inherit;
+}
+
+.page-title {
+	font-size: 2rem;
+	color: white;
+	text-align: center;
+	margin: 3rem 0;
+	text-shadow: 3px 3px 5px rgba(0,0,0,.5);
+}
+.page-desc {
+	text-align: center;
+	color: white;
+	margin: 1rem 0;
+	text-shadow: 3px 3px 5px rgba(0,0,0,.5);
+}
+#tabs, #accordion {
+	width: 960px;
+	margin: 3rem auto;
+}
+.tab-buttons > ul { /* flex container */
+	display: flex;
+	column-gap: 5px; /* flex items 마다 사이사이 간격 */
+} 
+.tab-buttons > ul li{ /* flex items */
+	background: white;
+	border-top-left-radius: 5px; /* 왼쪽 위 모퉁이 깍기? */
+	border-top-right-radius: 5px; /* 오른쪽 위 모퉁이 깍기 */
+	overflow: hidden;
+	text-align: center;
+} 
+.tab-buttons > ul a {
+	display: block;
+	width: 150px;
+	height: 50px;
+	line-height: 50px;
+} 
+
+.tab-buttons > ul li.tabOn {
+	color: orange;
+	background: rgb(241,241,241);
+	background: -webkit-linear-gradient(180deg, rgba(241,241,241,1) 0%, rgba(241,241,241,1) 35%, rgba(249,249,249,1) 100%);
+	background: -moz-linear-gradient(180deg, rgba(241,241,241,1) 0%, rgba(241,241,241,1) 35%, rgba(249,249,249,1) 100%);
+	background: -o-linear-gradient(180deg, rgba(241,241,241,1) 0%, rgba(241,241,241,1) 35%, rgba(249,249,249,1) 100%);
+	background: -webkit-gradient(linear, 100% 0, 0 0, from(rgba(241,241,241,1)), color-stop(0.35, rgba(241,241,241,1)), to(rgba(249,249,249,1)));
+	background: linear-gradient(180deg, rgba(241,241,241,1) 0%, rgba(241,241,241,1) 35%, rgba(249,249,249,1) 100%);
+}
+
+.tab-contents > ul li {
+	background: #f9f9f9;
+	height: 290px;
+	display: flex;
+	flex-direction: column; /* 기본값 row */
+	row-gap: 20px;
+}
+.tab-contents > ul li:nth-child(1) {
+	background-image:url("https://preview.free3d.com/img/2013/10/1743629708760712441/1bt64vkl-900.jpg");
+	background-repeat: no-repeat;
+	background-position: 10% center;
+	background-size:10%;
+}
+
+.tab-title {
+	margin-left: 30%;
+	margin-top: 20px;
+}
+
+.tab-desc {
+	margin-left: 30%;
+}
+
+/* =================== 아코디언 =========================== */
+
+#accordion > ul li {
+	background: rgb(241,241,241);
+	background: -webkit-linear-gradient(180deg, rgba(241,241,241,1) 0%, rgba(241,241,241,1) 35%, rgba(249,249,249,1) 100%);
+	background: -moz-linear-gradient(180deg, rgba(241,241,241,1) 0%, rgba(241,241,241,1) 35%, rgba(249,249,249,1) 100%);
+	background: -o-linear-gradient(180deg, rgba(241,241,241,1) 0%, rgba(241,241,241,1) 35%, rgba(249,249,249,1) 100%);
+	background: -webkit-gradient(linear, 100% 0, 0 0, from(rgba(241,241,241,1)), color-stop(0.35, rgba(241,241,241,1)), to(rgba(249,249,249,1)));
+	background: linear-gradient(180deg, rgba(241,241,241,1) 0%, rgba(241,241,241,1) 35%, rgba(249,249,249,1) 100%);
+	box-shadow: 6px 6px 10px 1px rgba(0,0,0,.5);
+	margin: 20px 0;
+	padding: 1rem;
+	box-sizing: border-box;
+  /*상자그림자:  x   y  blur distance color */
+}
+.question {
+	font-size: 1.250rem;
+	font-weight: bold;
+	position: relative;
+}
+.active strong { /* .question을 .active로 변경, 탭이 열릴때만 컬러풀 */
+	color: orange;
+}
+.question button {
+	position: absolute;
+	right: 5%;
+	background: none;
+	border: 0;
+	font-size: 1.250rem;
+}
+.answer {
+	display: none;
+}
+.active .answer {
+	display: block;
+}
+
+
+
+
+
+

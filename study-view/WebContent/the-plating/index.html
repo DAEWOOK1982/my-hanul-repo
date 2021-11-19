@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8" />
+	<title>the플레이팅 : 혼밥족을 위한 식문화</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+    	$(function(){
+    		//누구를 클릭하면, 누구를 처리해!
+    		$(".banner-wrap button").click(function(){ /* 콜백처리 : 순서대로~ */
+    			$(".banner").css("display", "none");    			 
+    		})
+    	});    	
+    </script>
+</head>
+<body>
+	<div id="sideWrap" class="px-1">
+		<h2>더 플레이팅</h2>
+		<p>혼밥족을 위한 플레이팅 구독 서비스</p>
+		<button id="close"><i class="far fa-times-circle"></i></button>
+		<div class="login-area">
+			<form name="loginForm" autocomplete="off">
+				<ul>
+					<li>
+						<label for="userId">아이디</label>
+						<input type="text" name="userId" id="userId">
+					</li>
+					<li>
+						<label for="userPw">비밀번호</label>
+						<input type="password" name="userPw" id="userPw">
+					</li>
+					<li>
+						<a href="#">※아이디가 생각나지 않으신가요?</a>
+						<button type="submit">로그인</button>
+					</li>					
+				</ul>				
+			</form>
+		</div>
+		<div class="side-banner">
+			<div><img src="https://picsum.photos/150/100" alt="사이드1"></div>
+			<div><img src="https://picsum.photos/150/100" alt="사이드1"></div>
+			<div><img src="https://picsum.photos/150/100" alt="사이드1"></div>
+		</div>	
+	</div>
+	<header>
+		<div class="banner">
+			<div class="banner-wrap">
+				<p class="text-white">지금 플레이팅 가입하고 최대 10만원 쿠폰 받으세요</p>
+				<button>&times;</button>
+			</div>
+		</div>
+		<div class="header-main">
+			<div class="main-top my-1">
+				<ul>
+					<li><a href="#">로그인</a></li>
+					<li><a href="#">회원가입</a></li>
+					<li><a href="#">고객센터</a></li>
+				</ul>
+			</div>
+			<div class="main-logo my-3">
+				<a href="#">
+					<img src="images/logo.png" alt="더 플레이팅">
+				</a>
+			</div>
+			<nav class="main-nav my-1">
+				<button id="sideNav"><i class="fas fa-bars"></i>전체메뉴</button>
+				<ul id="gnb"><!--  global navigation bar : 전역 메뉴 막대 -->
+					<li><a href="#">그릇/홈세트</a></li>
+					<li><a href="#">국내도자기그릇</a></li>
+					<li><a href="#">수입주방용품</a></li>
+					<li><a href="#">기타주방용품</a></li>
+				</ul>
+				<div  class="search">
+					<form name="searchForm" autocomplete="off">
+						<input type="text" maxlength="16" name="keyword" id="keyword" placeholder="1인 식기셋트">
+						<input type="image" src="images/finder.png">
+					</form>
+				</div>
+			</nav>
+		</div>	
+	</header>
+	<div class="slider">
+		<div id="imgs">
+			<div><img src="https://picsum.photos/id/1/1920/400" alt="출석체크 이벤트"></div>
+			<div><img src="https://picsum.photos/id/2/1920/400" alt="블랙프라데이 with 더플레이팅"></div>
+			<div><img src="https://picsum.photos/id/3/1920/400" alt="해외직구상품 배송비무료"></div>
+		</div>
+	</div>
+	<section>
+		<article>
+			<div class="article-wrap my-3">
+				<h3>건강한 밥상은</h3>
+				<h4>플레이팅으로부터,이제 바꿔보세요!</h4>
+				<nav class="tab-nav my-3">
+					<ul>
+						<li class="tabbed"><a href="#">그릇</a></li>
+						<li><a href="#">홈세트</a></li>
+						<li><a href="#">냄비</a></li>
+					</ul>
+				</nav>
+				<div id="tab-contents">
+					<ul class="tab-imgs my-1">
+						<li>
+							<figure>
+								<img src="https://picsum.photos/id/10/460/460" alt="">
+								<figcaption>라움 4인 홈세트 26P+유리컵 4P 증정</figcaption>
+							</figure>
+							<p class="price">89,500원</p>
+							<div class="marker">
+								<span>무료배송</span>
+								<span>특가</span>
+							</div>
+							<div class="btns">
+								<button>담기</button>
+								<button>구매</button>
+							</div>
+						</li>
+						<li>
+							<figure>
+								<img src="https://picsum.photos/id/20/460/460" alt="">
+								<figcaption>라움 4인 홈세트 26P+유리컵 4P 증정</figcaption>
+							</figure>
+							<p class="price">89,500원</p>
+							<div class="marker">
+								<span>무료배송</span>
+								<span>특가</span>
+							</div>
+							<div class="btns">
+								<button>담기</button>
+								<button>구매</button>
+							</div>
+						</li>
+						<li>
+							<figure>
+								<img src="https://picsum.photos/id/30/460/460" alt="">
+								<figcaption>라움 4인 홈세트 26P+유리컵 4P 증정</figcaption>
+							</figure>
+							<p class="price">89,500원</p>
+							<div class="marker">
+								<span>무료배송</span>
+								<span>특가</span>
+							</div>
+							<div class="btns">
+								<button>담기</button>
+								<button>구매</button>
+							</div>
+						</li>
+					</ul><!--  그릇 목록1 -->
+					<ul class="tab-imgs my-1">
+						<li>
+							<figure>
+								<img src="https://picsum.photos/id/40/460/460" alt="">
+								<figcaption>라움 4인 홈세트 26P+유리컵 4P 증정</figcaption>
+							</figure>
+							<p class="price">89,500원</p>
+							<div class="marker">
+								<span>무료배송</span>
+								<span>특가</span>
+							</div>
+							<div class="btns">
+								<button>담기</button>
+								<button>구매</button>
+							</div>
+						</li>
+						<li>
+							<figure>
+								<img src="https://picsum.photos/id/50/460/460" alt="">
+								<figcaption>라움 4인 홈세트 26P+유리컵 4P 증정</figcaption>
+							</figure>
+							<p class="price">89,500원</p>
+							<div class="marker">
+								<span>무료배송</span>
+								<span>특가</span>
+							</div>
+							<div class="btns">
+								<button>담기</button>
+								<button>구매</button>
+							</div>
+						</li>
+						<li>
+							<figure>
+								<img src="https://picsum.photos/id/60/460/460" alt="">
+								<figcaption>라움 4인 홈세트 26P+유리컵 4P 증정</figcaption>
+							</figure>
+							<p class="price">89,500원</p>
+							<div class="marker">
+								<span>무료배송</span>
+								<span>특가</span>
+							</div>
+							<div class="btns">
+								<button>담기</button>
+								<button>구매</button>
+							</div>
+						</li>
+					</ul><!--  그릇 목록2 -->
+					<ul class="tab-imgs my-1">
+						<li>
+							<figure>
+								<img src="https://picsum.photos/id/70/460/460" alt="">
+								<figcaption>라움 4인 홈세트 26P+유리컵 4P 증정</figcaption>
+							</figure>
+							<p class="price">89,500원</p>
+							<div class="marker">
+								<span>무료배송</span>
+								<span>특가</span>
+							</div>
+							<div class="btns">
+								<button>담기</button>
+								<button>구매</button>
+							</div>
+						</li>
+						<li>
+							<figure>
+								<img src="https://picsum.photos/id/80/460/460" alt="">
+								<figcaption>라움 4인 홈세트 26P+유리컵 4P 증정</figcaption>
+							</figure>
+							<p class="price">89,500원</p>
+							<div class="marker">
+								<span>무료배송</span>
+								<span>특가</span>
+							</div>
+							<div class="btns">
+								<button>담기</button>
+								<button>구매</button>
+							</div>
+						</li>
+						<li>
+							<figure>
+								<img src="https://picsum.photos/id/90/460/460" alt="">
+								<figcaption>라움 4인 홈세트 26P+유리컵 4P 증정</figcaption>
+							</figure>
+							<p class="price">89,500원</p>
+							<div class="marker">
+								<span>무료배송</span>
+								<span>특가</span>
+							</div>
+							<div class="btns">
+								<button>담기</button>
+								<button>구매</button>
+							</div>
+						</li>
+					</ul><!--  그릇 목록3 -->
+				</div>
+			</div>
+		</article>
+		<article></article>
+	</section>
+	<aside></aside>
+	<footer></footer>
+	<script>
+	/*
+	.is(선택자) 
+	.hasClass(클래스명) : 클래스가 있는지 확인(boolean)
+	.addClass(클래스명) : 클래스명을 추가
+	.removeClass(클래스명) : 클래스명을 삭제
+	.toggleClass(클래스명) : 클래스명을 추가/삭제(토글)
+	-----------------------------------------------------
+	.prev() : 이전 / 형 요소 선택
+	.next() : 다음 / 동생 요소 선택
+	.siblings() : 형제 요소 선택자
+	.children() : 자식
+	.parent() : 부모
+	// .size() : 갯수 확인하는 메소드(v3.4제거)  .length를 대신 사용!
+	// console.log($("#tab-contents > ul").length);
+	// :lt(index) - less than : 이하~ , 작은~
+	// :gt(index) - greater than : ~큰 (~이상)
+	// :eq(index) - equal , 같은  or .eq(index) 
+	// .hide(index) - display: none 처리 메소드
+	// .show(index) - display: block 처리 메소드
+	// deprecated : 더이상 사용되지 않는~ (다음 버전에는 제거될 예정 removed)
+	*/
+    $(document).ready(function(){
+    	
+    	init(); // 초기 세팅 함수 init 호출
+    	tabControl();
+    	slideNav();
+    	slides();
+      
+    }); /* $(function(){...}) 끝부분 */
+    function tabControl(){
+    	$(".tab-nav li").click(function(e){
+    		e.preventDefault(); // a 태그 클릭시 상위로 이동하는 이벤트 차단
+    		if(!$(this).hasClass("tabbed")) { // tabbed 없으면 할일!!
+    			// 클릭한 li에 tabbed 추가하고, 다른 li의 tabbed 삭제    			
+    			$(this).addClass("tabbed");
+    			$(this).siblings().removeClass("tabbed");
+    		}
+    		// .index() : 인덱스 번호를 알아내는 메소드
+    		var index = $(this).index();
+    		// 현재 그릇 탭(0), 그릇 컨텐츠만 보이는 상태
+    		var uls = $("#tab-contents > ul"); // .length로 갯수 확인 : 3
+    		// 홈세트 클릭시 --> 홈세트 내용 보이게!!
+    		uls.eq(index).show();    		
+    		uls.eq(index-1).hide();
+    		if(index == 0) {
+    			uls.eq(0).show();
+    			uls.eq(0).siblings().hide();
+    		}
+    	})
+    }
+    function slideNav(){
+    	$("#sideNav").click(function(){
+			$("#sideWrap").css("left", 0);
+			$("html, body").css("overflow","hidden");
+    	});
+    	$("#close").click(function(){
+    		$("#sideWrap").css("left", "-100%");
+    		$("html, body").css("overflow","auto");
+    	});
+    }
+    function slides(){
+    	$('#imgs').bxSlider({
+      	  controls: false, // 좌우 버튼 빼기
+      	  pager: false, // 페이지 위치표시 빼기
+      	  auto: true, // 자동 슬라이드 추가
+      	  pause: 3000 // 3초마다 한번씩 슬라이드
+        });
+        $('.side-banner').bxSlider({
+      	  controls: false, // 좌우 버튼 빼기
+      	  pager: true, // 페이지 위치표시 빼기
+      	  auto: true, // 자동 슬라이드 추가
+      	  pause: 3000 // 3초마다 한번씩 슬라이드
+        });
+    }
+    function init(){
+    	$("#tab-contents > ul:gt(0)").hide();
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

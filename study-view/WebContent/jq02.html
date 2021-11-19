@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>p.472 제이쿼리 셀렉터 사용</title>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="jq02.js"></script>
+<link rel="stylesheet" href="jq02.css" />
+</head>
+<body>
+	<h1>제이쿼리 셀렉터 사용</h1>
+	<h2>p.473 내용 참고</h2>
+	<!-- .show(), .hide(), .click() : 탭메뉴 만들때 응용! --> 
+	<!-- ul>li*4>img[src=picsum.photos/id/$/200/300 alt=img$] -->
+	
+	<h3>image galler</h3>
+	<div class="btns">
+		<button id="b1">#pic1 숨기기</button>
+		<button id="b2">.c1 숨기기</button>
+		<button id="b3">모두 숨기기</button>
+		<button id="b4">숨기기 취소</button>
+	</div>
+	<ul id="pic">
+		<li id="pic1">
+			<img src="https://picsum.photos/id/1/200/300" alt="이미지">
+		</li>
+		<li>
+			<img src="https://picsum.photos/id/10/200/300" alt="이미지">
+		</li>
+		<li class="c1">
+			<img src="https://picsum.photos/id/21/200/300" alt="이미지">
+		</li>
+		<li class="c1">
+			<img src="https://picsum.photos/id/31/200/300" alt="이미지">
+		</li>
+	</ul>
+	
+</body>
+</html>
+
+
+
+
+
+

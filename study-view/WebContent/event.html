@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script>
+$(function(){
+	// p.480
+	// 클릭이벤트 - 웹서비스에서 가장 자주 사용!
+	// 키보드(키 감지) 이벤트 - 게임?!
+	/* $("#b1").click(function(){
+		alert("테스트!");
+	}); */		
+	var BTN = document.querySelector("#b1"); // 객체 선택   $("#b1")
+	
+	BTN.addEventListener("click", function(){  // 이벤트 처리  .click({...})
+		alert("테스트!");
+	})
+});
+</script>
+</head>
+<body>
+	<h1>마우스 이벤트</h1>
+	<button id="b1">클릭하시오</button>
+	<h2>마우스 이벤트 예제(p.481~482)</h2>
+	<p>마우스 포인터를 여기에!!</p>
+	<button id="b2">더블 클릭하시구려.</button>
+	<blockquote>인용문 : 지도자, 교수, 박사, 업적을 남긴 사람들의 조언!</blockquote>
+	<script>
+		$(document).ready(function(){
+			$("body").keypress(function(event){
+				console.log(event.keycode());
+				$("body").css({
+					backgroundColor: "aqua",
+					"font-size": "2rem",
+					color: "#191919"
+				})
+			})
+			/* $("p").on("mouseenter", function(){
+				$(this).text("왔구려, 마우스포인터!!!");
+			});
+			$("p").on("mouseleave", function(){
+				$(this).text("돌아와, 마우스포인터!!!");
+			}); */
+			$("p").on({
+				mouseenter: function(){
+					$(this).text("왔구려, 마우스포인터!!!");
+				},
+				mouseleave: function(){
+					$(this).text("돌아와, 마우스포인터!!!");
+				}
+			});
+			$("#b2").on("dblclick", function(){
+				$(this).css("background-color", "coral"); // set
+			})
+		})
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+

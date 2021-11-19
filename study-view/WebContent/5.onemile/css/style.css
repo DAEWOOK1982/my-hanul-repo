@@ -1,0 +1,246 @@
+@charset "UTF-8";
+
+/* 01. 공통(PC,MOBILE)요소 정의 */
+body {
+	font:14px/1.5 "Noto Sans KR", sans-serif;
+	color: #888;
+	overflow-x:hidden;
+}
+
+.blind {
+	display: none;
+}
+
+a, a:link {
+	text-decoration: none;
+	color: inherit; /* 부모 요소로부터 색상을 상속받아 사용한다 */
+}
+
+/* 02. 각 부분 디자인 요소 */
+/* 02-1. header */
+.header-main {
+	max-width: 1000px;
+	display: flex;
+	justify-content:space-between;
+	align-items: center;
+	position: absolute;
+	width: 1000px;
+	padding: 25px 0;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 1000
+}
+#gnb {
+	display: flex;
+}
+#gnb > li {
+	margin: 0 10px;
+}
+#gnb > li > a {
+	font-size: 20px;
+	font-weight: 500;
+	font-size: #fff;
+}
+#gnb > li:hover > a {
+	color: #ff8e00;
+}
+
+#gnb > li:hover .sub {
+	display: block;
+}
+.sub {
+	display: none;
+	position: fixed;
+	background: white;
+	width: 1920px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.lnb {
+	position: absolute;
+	width:1000px;
+	background: gold;
+}
+
+#tnb {
+	display: flex;
+}
+#tnb > li {
+	margin: 0 10px;
+}
+#tnb > li img {
+	opacity: .7;
+	transition: opacity .3s cubic-bezier(.62,.2,.82,.47);
+}
+#tnb > li:hover img{
+	opacity: 1;
+}
+
+.header-sub {
+	background: url("../images/visual_bg.jpg") center 0;
+	min-height: 674px;
+	position: relative;
+}
+#sub-contents {
+	display: flex;
+	align-items: flex-start; /* center, flex-end 등 여러값 중 하나 */
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 20%);
+	bottom: 0;
+}
+.header-slogan-text {
+	margin:150px 0 0 0;
+}
+
+/* 02-2. main section */
+.article-title {
+	max-width: 1000px;
+	margin: 120px auto 30px;
+	text-align: center;
+	font-size: 24px;
+	font-weight: 700;
+	color: #888; 
+	text-transform: uppercase;	
+}
+.article-title span {
+	color: #ff8e00;
+}
+
+.benefit-wrap {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+.benefit {
+	display: flex;
+	justify-content: space-evenly;
+}
+.benefit li {
+	width: 300px;
+	height: 300px; /* auto가 기본이기때문에~ 확실하게!! */
+	overflow: hidden;
+	border-radius: 50%;
+}
+.benefit li img {
+	transition: transform .3s cubic-bezier(.25,.94,.53,.26), opacity 1s ease-in-out;
+}
+.benefit li:hover img {
+	transform: scale(1.2);
+	opacity:.7;
+}
+
+/* 02-3 aside */
+aside {
+	border-top: 1px solid #f0f0f0;
+	border-bottom: 1px solid #f0f0f0;
+	padding: 10px 0;
+	margin: 50px 0;
+	/* background: rgb(33,0,36);
+	background: -webkit-linear-gradient(90deg, rgba(33,0,36,1) 0%, rgba(156,57,182,1) 100%);
+	background: -moz-linear-gradient(90deg, rgba(33,0,36,1) 0%, rgba(156,57,182,1) 100%);
+	background: -o-linear-gradient(90deg, rgba(33,0,36,1) 0%, rgba(156,57,182,1) 100%);
+	background: -webkit-gradient(linear, 0 100%, 0 0, from(rgba(33,0,36,1)), to(rgba(156,57,182,1)));
+	background: linear-gradient(90deg, rgba(33,0,36,1) 0%, rgba(156,57,182,1) 100%); */
+}
+.aside-wrap {
+	max-width: 1000px;
+	margin:0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.cs-center {
+	display: flex;
+	color: #000;
+	font-size: 20px;
+	font-weight: 500;
+}
+.cs-center p {
+	font-size: 22px;
+	font-weight: 700;
+	color: #ff8e00;	
+}
+.with-icons-phone {
+	padding: 0 0 0 25px; 
+	margin: 0 10px 0 0;
+	background: url("../images/icon_call.png") no-repeat left center;
+}
+.side-nav ul { /* 마치 div 처럼 사용, container 역할 */
+	display: flex;	
+	font-size: 16px;
+	font-weight: 500;
+	color: #888;
+}
+.side-nav ul li {
+	margin:0 10px;
+}
+.side-nav ul li:nth-child(3){
+	margin-right: 0;
+}
+.side-nav ul li:hover {
+	color: #000;
+}
+
+/* 02-4 footer */
+footer {
+	text-align: center;
+}
+.footer-wrap {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+#m_open {
+	display: none;
+	width: 24px;
+	height: 24px;
+}
+#m_open > div {
+	width: 100%;
+	height: 3px;
+	background: #fff;
+}
+#m_open > div:nth-child(2) {
+	margin: 5px 0;
+}
+
+.vp-wrap {
+	position: fixed;
+	display: none;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index:1001;
+	background: rgba(255,255,255,1);
+}
+
+/* 03. 반응형 디자인/기능 요소 */
+@media screen and (min-width: 1024px){ /* pc */
+	
+}
+@media screen and (max-width: 768px){ /* 7인치 태블릿 */
+	
+}
+@media screen and (max-width: 480px){ /* 5.5인치 정도? 모바일 */
+	.header-main {
+		width: 90%;
+	}
+	.main-nav, .icon-nav {
+		display: none;
+	}
+	#m_open {
+		display: block;
+	}
+	.header-product {
+		display: none;
+	}
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>식단표</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<style>
+	table, td, th {
+		border: 1px solid #333;    /* 표 테두리 : 1px 직선 검정색  적용 */
+		border-collapse: collapse;   /* 테두리 겹침 : 겹침 허용 (1줄로) 적용 */
+	}
+	th { 
+		background-color: coral; /* 배경색 */
+		color: white; /* 글자색 */
+		}
+	td, th {
+		padding: 10px 15px; /* 패딩 (안 여백) : 상,하 10px   좌우 15px 여백 적용 */
+		width: 100px; /* 셀 하나하나의 가로 폭 */
+		text-align: center; /* 셀 내부의 내용을 가로 가운데애 배치 */ 
+	}
+	h1, figcaption { text-align: center; }
+	#menu-table {
+		width: 60%;
+		margin: 0 auto;
+	}
+	</style>
+</head>
+<body>
+	<h1>테이블 실습</h1>
+	<figure>
+		<figcaption>식단표</figcaption>
+		<table id="menu-table">		
+		<tr>
+			<th>식사/요일</th>
+			<th>월</th>
+			<th>화</th>
+			<th>수</th>
+			<th>목</th>
+			<th>금</th>
+			<th>비고</th>
+		</tr>	
+		<tr>
+			<th>아침</th>
+			<td colspan="2">된장국</td>
+			<td rowspan="3">정기<br>휴무</td>
+			<td>샐러드+모닝빵</td>
+			<td>샌드위치</td>
+			<td rowspan="3">비고</td>
+		</tr>
+		<tr>
+			<th>점심</th>
+			<td>쌈채소</td>
+			<td>햄버거</td>
+			<td>마파두부</td>
+			<td>카레</td>
+			
+		</tr>
+		<tr>
+			<th>저녁</th>
+			<td>생선</td>
+			<td>두부김치</td>
+			<td>곱창</td>
+			<td>짜장</td>
+			
+		</tr>	
+	</table>
+	</figure>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>피그마 스케치를 바탕으로 만드는 탭디자인</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+	<h1 class="page-title">아코디언 구현</h1>
+	<p class="page-desc">html5, css3, jquery로 구현하는 아코디언</p>
+	<div id="accordion">
+		<ul>
+			<li>
+				<p class="question"><strong>Q.</strong> 배송은 언제쯤 이뤄지나요?? <button class="btn">&plus;</button></p>
+				<p class="answer">
+					도서 산간지역은 3~5일, 평균 1~3일 소요됩니다. 어쩌구 저쩌구~....배송사의 사정에 따라 결정되며, 천재지변/자연재해등으로 인한 피해는 보상센터(TEL.062-362-7797)로 문의주시기 바랍니다.
+<!-- 					<blockquote> -->
+<!-- 						담당자 : 홍길동<br> -->
+<!-- 						전화번호 : (내선) 903번<br> -->
+<!-- 						담당업무 : 제품배송, 택배업무 -->
+<!-- 					</blockquote> -->
+				</p>
+			</li>
+			<li>
+				<p class="question"><strong>Q.</strong> 결제 수단은 어떤것들이 있나요?? <button class="btn">&plus;</button></p>
+				<p class="answer">
+					도서 산간지역은 3~5일, 평균 1~3일 소요됩니다. 어쩌구 저쩌구~....배송사의 사정에 따라 결정되며, 천재지변/자연재해등으로 인한 피해는 보상센터(TEL.062-362-7797)로 문의주시기 바랍니다.
+				</p>
+			</li>
+			<li>
+				<p class="question"><strong>Q.</strong> 환불은 어떻게 해야하나요?? <button class="btn">&plus;</button></p>
+				<p class="answer">
+					도서 산간지역은 3~5일, 평균 1~3일 소요됩니다. 어쩌구 저쩌구~....배송사의 사정에 따라 결정되며, 천재지변/자연재해등으로 인한 피해는 보상센터(TEL.062-362-7797)로 문의주시기 바랍니다.
+				</p>
+			</li>
+			<li>
+				<p class="question"><strong>Q.</strong> 대량구매 문의는 어떻게 하나요?? <button class="btn">&plus;</button></p>
+				<p class="answer">
+					도서 산간지역은 3~5일, 평균 1~3일 소요됩니다. 어쩌구 저쩌구~....배송사의 사정에 따라 결정되며, 천재지변/자연재해등으로 인한 피해는 보상센터(TEL.062-362-7797)로 문의주시기 바랍니다.
+				</p>
+			</li>
+		</ul>
+	</div>
+	<script>
+	// 아코디언 으로 구현하는 자주묻는질문답변(FAQ)
+	// 1. +를 클릭하면
+	// 2. +가 있는 목록(li)의 .answer를 display 시킨다.
+	// 3. 다른 목록(li)의 +를 누르면, 기존의 목록의 .aswer를 접고, 
+	// 클릭한 목록의 .answer를 display 시킨다.
+	// javascript/jquery : script 스크립트 --> 묘사하다, 서술하다,..글로 표현
+//		console.log($(".btn").length);
+		// -------------------- 관계 선택자 -------------------------
+		// .parent() : 바로 윗 부모요소 선택자
+		// .parents(selector) : 윗쪽 부모요소 선택자 selector를 필터링
+		// .children() : 자손
+		// .find() : 후손
+		// .siblings() : 형제   / 형 .next(), 동생 .prev()
+		
+		// .hasClass(selector) : selector의 존재여부를 Boolean으로 확인
+		// .is(selector) : selector의 상태 확인
+		// .addClass(selector) : selector 추가 (존재하는 클래스는 추가x)
+		// .removeClass() :           " 제거 
+		// .toggleClass() :           " 추가/제거 (반복)
+		
+		// 처음 +를 클릭했을때,
+		// 다른 +를 클릭할때는? 기존 +에 의해 추가된 .active 제거,
+		// .each() : 확장집합을 반환하는 메소드
+	$(function(){
+		
+			
+		$("#accordion button").each(function(i){
+			var index = i;
+			var btns = $(this);
+// 			console.log("버튼갯수 : "+btns.length);
+			btns.click(function(e){
+// 			console.log("인덱스 :"+i);
+			console.log(e.target);
+				if(!$(this).parents("li").hasClass("active")){
+					$(this).parents("li").siblings().removeClass("active");
+					$(this).parents("li").addClass("active");
+				}	
+	 		});
+		});			
+	})
+	</script>
+</body>
+</html>
+
+
+
+
+

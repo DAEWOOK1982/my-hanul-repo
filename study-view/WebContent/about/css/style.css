@@ -1,0 +1,109 @@
+@charset "UTF-8";
+/* 초기화 이후 추가 코드 */
+
+body {
+	font-family: 'Nanum Gothic', sans-serif; /* 글꼴 */
+	color: black;
+}
+a, a:link {
+	color: inherit; /* 글자 색상 */ 
+	text-decoration: none; /* 꾸밈 : 없음 */
+}
+.blind {
+	display: none; /* 표시 : 안함 (공간까지 감춤) */
+}
+
+
+/* header 영역 - 사이트 소개와 내비게이션이 오는곳 */
+#header-wrap {
+	width: 1100px; /* 가로 폭 1100px 크기 제한, 100% */
+	margin: 0 auto; /* 가로 가운데 배치 */
+	display: flex; /* 표시 : 플렉스 방식 (IE 11에서 버그..) */ 
+	justify-content: space-between; /* 좌우 양끝 배치, 나머지 공간 분배 */ 
+	align-items: center; /* 수직 중앙 배치 */
+	padding: 20px 0; /* 상, 하 20px (안)여백 추가 */
+}
+#gnb {
+	display: flex;
+}
+#gnb li {
+	margin:0 10px; /* 바깥 여백 : 좌,우 각각 10px씩 */
+}
+
+/* carousel 영역 : 캐러셀 이미지, 슬라이드 이미지 등 */
+.carousel {
+	background: gold;
+	height: 450px;
+	overflow: hidden; /* 넘치면?! 숨겨요! */
+}
+.carousel img { /* 캐러셀 클래스 안에 있는 img 태그를 */
+	width: 100%; /* 넓이를 가로 가득 채워요! */
+}
+
+/* section : 본문, article 등을 삽입 */
+.wrap-bg {
+	background: #5188B9; /* 배경색상 : 16진수(HEX) A~F, 0~9 vs rgb(r,g,b) vs rgba(r,g,b,a) */
+	padding: 30px 0;
+}
+.article-wrap {
+	max-width: 1100px; /* 최대 폭 : 1100px, (공간이 아무리 커도 최대 1100px, 적으면? 100%)*/
+	margin: 0 auto;
+	/* 반응형 웹서비스 만들때 사용하는 속성 */
+}
+.article-wrap h2, .article-wrap h3 {
+	text-align: center; /* 텍스트 정렬 : 가로 가운데 */
+	margin: 30px 0; /* 상, 하 (바깥)여백 30px씩! 적용 */	
+}
+
+.char-list, .skill-list {
+	display: flex;	
+	justify-content: space-between;
+}
+article > h2, article > h3 { /* 자식(children) 선택자 : > */
+	text-align: center;
+	margin: 30px 0;
+}
+
+.skill-list h4, .contact-list h4 {
+	text-align: center;
+	margin: 20px 0; /* 상,하 20px 좌,우 0px */
+}
+
+/* aside : 광고, 검색, 부가적인 내용 */
+.aside-wrap {
+	max-width: 1100px;
+	margin: 0 auto;
+}
+.aside-wrap h2, .aside-wrap h3 {
+	text-align: center;
+	margin: 30px 0;
+}
+.contact-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+/* footer : 제작자의 이름,주소,연락처 등 저작권 표시 */
+#footer-wrap {
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 50px 0;
+	display: flex;
+	justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

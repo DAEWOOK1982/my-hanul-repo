@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>go캠핑 : 산으로 바다로</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+	<link rel="stylesheet" href="css/design.css" />
+	<link rel="stylesheet" href="css/member.css" />
+</head>
+<body>
+	<h1 class="blind">go캠핑 회원가입</h1>
+	<div id="modal">
+		<div class="modal-box">
+			<h2>아이디 중복확인</h2>
+			<button id="modalExit">&times;</button>
+			<input type="text" id="check">
+			<input type="button" value="확인" id="confirm">
+			<p>※ 아이디는 특수문자, 영문자, 숫자를 조합하여 12~36자로 만드세요</p>
+			<p>※ 특수문자중 ~, @, *는 사용하실 수 없습니다.</p>
+		</div>
+	</div>
+	<header>
+		<div class="header-wrap">
+			<div id="logo">
+				<a href="#">
+					<img src="images/logo.png" alt="go캠핑">
+				</a>
+			</div>
+			<nav>
+				<ul id="gnb">
+					<li><a href="#">소개</a></li>
+					<li><a href="#">캠핑상식</a></li>
+					<li><a href="#">캠핑장비</a></li>
+					<li><a href="#">캠핑지도</a></li>
+				</ul>
+			</nav>
+			<div id="search">
+				<form>
+					<label for="searchKey" class="blind">검색어</label>
+					<input type="search" name="searchKey" id="searchKey">
+					<input type="image" src="images/go_btn.png" alt="검색">
+				</form>
+			</div>
+		</div>
+	</header>
+	<div class="big-img">
+		<p>go캠핑 : 캠핑의 모든 것</p>		
+		<!-- <figure>
+			<img src="images/visual.jpg" alt="비주얼 이미지">
+			<figcaption class="blind">비주얼 이미지</figcaption>
+		</figure> -->
+	</div>
+	<section id="main">
+		<div class="main-wrap">
+			<h2>register &#124; 회원 가입</h2>
+			<h3>go camping membership</h3>
+			<article>
+				<h4 class="blind">회원 가입</h4>
+				<form autocomplete="off">
+					<div class="form-wrap border0 auto-height">
+						<!--  회원가입 폼을 작성합니다. -->
+						<ul>
+							<li>
+								<label for="userId">아이디</label>
+								<input type="text" pattern="[a-z][a-z0-9_]{5,14}$" name="userId" id="userId" required title="다시 확인바랍니다.">
+								<input type="button" value="아이디 중복확인" id="idCheck">
+								</li>
+							<li>
+								<label for="userPw">비밀번호</label>
+								<input type="password" name="userPw" id="userPw">
+							</li>
+							<li>
+								<label for="userPw2">비밀번호확인</label>
+								<input type="password" name="userPw2" id="userPw2">
+							</li>
+							<li>
+								<label for="userPhone">전화번호</label>
+								<input type="tel" name="userPhone" id="userPhone">
+							</li>
+							<li>
+								<label for="userMail">이메일</label>
+								<!-- <input type="email" name="userMail" id="userMail"> -->
+								<input type="text" name="userMail" id="userMail">
+								<span id="at">@</span>
+								<select id="mailList">
+									<option selected>직접선택</option>
+									<option value="naver.com">네이버</option>
+									<option value="daum.net">다음</option>
+									<option value="gmail.com">구글메일</option>
+								</select>
+							</li>
+							<li>
+								<label for="suggest">추천인ID</label>
+								<input type="text" name="suggest" id="suggest">
+							</li>
+							<li>
+								<input type="submit" value="회원가입">
+								<input type="reset" value="취소">
+							</li>
+						</ul>
+					</div>
+				</form>
+		</div>
+		</article>
+	</section>
+	<footer>
+		<hr>
+		<div class="footer-wrap">
+			<div id="logo2">
+				<a href="#">
+					<img src="images/logo.png" alt="go캠핑">
+				</a>
+			</div>
+			<address>
+				<p>상호 : go캠핑(구.캠핑클럽) 대표자 : 홍길동  사업자번호 : 광주-서구-제21호</p>
+				<p>전화번호 : 062)345-6789 고객상담 : cs@go-camp.com 개인정보책임자 : 홍길동</p>
+				<p>주소 : 광주광역시 서구 광천 1로 13 (광천동)</p>
+				<p>&copy; go캠핑. all rights reserved.</p>
+			</address>
+			<ul id="sns">
+				<li>
+					<a href="#">
+						<img src="images/youtube.png" alt="유투브채널">
+					</a>
+				</li>
+				<li>
+					<a href="#"><img src="images/insta.png" alt="인스타"></a>
+				</li>
+				<li>
+					<a href="#"><img src="images/facebook.png" alt="페이스북"></a>
+				</li>
+			</ul>
+		</div>
+	</footer>
+	<script>
+	const BTN = document.querySelector("#idCheck");
+	const EXIT = document.querySelector("#modalExit");
+	const BODY = document.querySelector("body");
+	
+	EXIT.addEventListener("click", function(){
+		const MODAL = document.querySelector("#modal");
+		MODAL.style.display = "none";
+		BODY.style.overflow = "auto";
+	});
+	
+	BTN.addEventListener("click", function(){
+		const MODAL = document.querySelector("#modal");
+/* 		MODAL.style.display = "block"; */
+		MODAL.classList.add("showing");
+		BODY.style.overflow = "hidden";
+	});
+	</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>

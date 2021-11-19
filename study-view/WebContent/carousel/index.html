@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery carousel</title>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous" crossorigin></script>
+<style>
+.carousel {
+	width: 1200px;
+	height: 400px;
+	margin: 0 auto;
+	position: relative; /* absolute의 기준점, body는 모두의 정렬 기준 */
+	overflow: hidden;
+}
+#imgs {
+	width: 3600px;
+	height: 400px;
+	transition: all .4s;
+}
+#imgs img {
+	float: left;
+}
+.btns {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+#leftBtn {
+	position: absolute;
+	left: 5%;
+	top: 45%;
+	transition: all .4s;
+}
+#leftBtn:hover {
+	transform: scale(1.2);
+}
+#rightBtn {
+	position: absolute;
+	right: 5%;
+	top: 45%;
+	transition: all .4s;
+}
+#rightBtn:hover {
+	transform: scale(1.2);
+}
+#pageNum {
+	display: none;
+	background: rgba(0,0,0,.5); /* 검정색 50% 투명 배경 */
+	color: white;
+	font-size: 2rem;
+	position: absolute;
+	text-align: center;
+	border-radius: 30px;
+	width: 200px;
+	height: 48px;
+	left: 50%;
+	bottom: 5%;
+	transform: translateX(-50%);
+}
+#pager {
+	position: absolute;
+	list-style: none; /* 목록의 스타일 결정, 1,2,3,...a,b,c,,.... 없음 */
+	width: 120px;
+	height: 30px;
+	left: 50%;
+	bottom: 5%;
+	transform: translateX(-50%);
+}
+#pager li {
+	background: gray;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	display: inline-block;
+}
+.active {
+	background: black !important;
+}
+</style>
+</head>
+<body>
+	<h1>캐러셀</h1>
+	<header>
+		<div class="header-wrap">
+			<div id="mainLogo">
+				<a href="#">
+					<img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fhatchful.shopify.com%2F&psig=AOvVaw0d9bD2-bPgYcEOCvQOMvjy&ust=1637026441366000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCJjqxu-cmfQCFQAAAAAdAAAAABAD" alt="로고">					
+				</a>
+			</div>
+		</div>
+	</header>
+	<!--  carousel slider -->
+	<div class="carousel">
+		<div id="imgs">
+			<img src="https://picsum.photos/id/1/1200/400" alt="slide1">
+			<img src="https://picsum.photos/id/10/1200/400" alt="slide2">
+			<img src="https://picsum.photos/id/20/1200/400" alt="slide3">
+		</div>
+		<div id="pageNum">
+			1 / 3
+		</div>
+		<ol id="pager">
+			<li></li>
+			<li></li>
+			<li></li>
+		</ol>
+		<div class="btns">
+			<div id="leftBtn"><img src="images/arrow-left.png" alt="왼쪽이동"></div>
+			<div id="rightBtn"><img src="images/arrow-right.png" alt="오른쪽이동"></div>
+		</div>		
+	</div>
+	<section id="main">
+		<h2>본문</h2>
+		<p>1. carousel 제작을 위한 figma 스케치</p>
+		<p>2. css 를 이용한 레이아웃 작성, 배치</p>
+		<p>3. javascript/jQuery를 이용한 캐러셀 스2크립트 작성</p>
+	</section>
+	<footer>
+		<p>카피라이트</p>
+	</footer>
+	<script>
+	var currentIndex = 0; // 처음시작하는 슬라이드 요소의 위치기준 인덱스
+	$(function(){
+		// 캐러셀 이미지 관련 코드
+		// 페이저 1번 초기화
+		$("#pager > li:nth-child(1)").addClass("active"); // 반대 .removeClass();, 유사 .toggleClass();
+		
+		// 1. leftBtn 클릭시 할일
+		$("#leftBtn").click(function(){
+			moveLeft();
+		});
+		$("#rightBtn").click(function(){
+			moveRight();
+		});
+	});
+	function pager(index){
+		/* 대상LI.addClass("active");
+		대상LI의 형제요소.removeClass("active");
+		형제요소 선택자 : .siblings();
+		인덱스 요소 선택 : .eq();
+		*/
+		
+		$("#pager li").removeClass("active");
+		$("#pager li").eq(index).addClass("active");
+	}
+	function moveLeft(){
+		var nextIndex = currentIndex-1; // 왼쪽 1번 누르면, -1로 결정
+		if(nextIndex < 0) nextIndex = 2; // 조건검사, 현재 사진 3장!
+		currentIndex = nextIndex;
+		pager(nextIndex); // 페이지를 조정하는 함수를 호출!
+		console.log("페이저로 넘기는 index: "+nextIndex);
+		$("#pageNum").text((currentIndex+1)+" / 3");
+		var nextPos = -1200 * nextIndex;
+		$("#imgs").css("marginLeft", nextPos);
+	}
+	function moveRight(){
+		var nextIndex = currentIndex+1;
+		if(nextIndex >= 3) nextIndex = 0;
+		currentIndex = nextIndex;
+		pager(nextIndex); // 페이지를 조정하는 함수를 호출!
+		$("#pageNum").text((currentIndex+1)+" / 3");
+		var nextPos = -1200 * nextIndex;
+		$("#imgs").css("marginLeft", nextPos);
+	}
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

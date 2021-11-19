@@ -1,0 +1,20 @@
+@charset "UTF-8";
+:root {
+	--color-main:#d7ecff;
+	--color-Main:black;
+	--ff-size: 16px;
+	--ff-name: "Noto Sans KR"
+}
+*, *::before, *::after {
+	box-sizing: content-box; /* 박스 사이즈를 결정하는 방법 */
+}
+div {
+	color: var(--color-Main, lime);
+}
+p {
+	background: var(--color-main);
+	margin: 15px 12px 17px;
+	padding: 13px 13px 13px 13px;
+	border: 3px dashed black;
+	
+}

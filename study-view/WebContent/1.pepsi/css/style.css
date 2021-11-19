@@ -1,0 +1,126 @@
+@charset "UTF-8";
+:root { /* 전역 변수 */
+	--main-color:#000000;
+	--sub-color:#005891;
+	--point-color: navy;
+	--txt1-color: #555555;	
+}
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 16px;
+	line-height: 1.5; /* 기본값 100%에 1.5배 */
+	color: var(--main-color);
+}
+.blind {
+	text-indent: -9999px; /* 들여쓰기 : (음수값=내어쓰기) */
+	font-size: 0;
+	height: 0;
+	overflow: hidden;
+}
+a, a:link {
+	color: inherit; /* 색상 : 상속 */
+	text-decoration: none; /* 글자꾸밈 : (밑줄)없음 */
+}
+
+/* =============== LAYOUT ================ */
+/* 01.header */
+header {
+	overflow: hidden;
+}
+.main-logo {
+	width: 100px;
+	height: 110px;
+	margin: 50px auto;	
+}
+
+#gnb {
+	display: flex;
+	justify-content: center;
+	background: var(--sub-color);
+	padding: 15px 0;
+	column-gap: 30px;
+}
+
+#gnb a {
+	color: gold;
+}
+
+/* 02.carousel */
+#hero {
+	display: flex;
+	justify-content: center;
+	margin: 20px 0; 
+}
+
+/* 03.main */
+hgroup {
+	text-align: center;
+}
+hgroup h2 {
+	font-size: 22px;
+	text-transform: uppercase;
+}
+hgroup h3 {
+	font-size: 16px;
+	color: var(--txt1-color);
+}
+#movies {
+	display: flex;
+	justify-content: center;
+	margin: 15px 0;
+}
+
+/* 04.aside */
+#social {
+	font-size: 0;
+	text-align: center;
+	margin: 50px 0;
+}
+#social li {
+	display: inline-block;
+	margin: 0 5px;
+}
+.center-info {
+	text-align: center;
+}
+.center-info h3 {
+	text-transform: uppercase;
+	font-size: 15px;
+	color: var(--sub-color);
+}
+.center-info p {
+	font-size: 30px;
+	font-weight: bold; /* 글자두께 : 두껍게 */
+	color: var(--sub-color)
+}
+
+/* 05.footer */
+hr {
+	margin:30px 0;
+	height: 1px;
+	background: var(--sub-color);
+	border: 0;
+}
+footer {
+	padding: 30px 0;
+}
+address {
+	text-align: center;
+}
+address p {
+	text-transform: uppercase;
+}
+
+
+
+
+
+
+
+

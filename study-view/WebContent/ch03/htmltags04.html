@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>테이블 사용</title>
+	<style>
+	/* 내부 스타일 : 처음에만...앞으로는 외부 스타일로 작성할 예정입니다 */
+	
+	#table1, td {
+		border: 1px solid #333;
+		border-collapse: collapse;
+	}
+	td {
+		text-align: center; /* 셀(cell)의 내용을 가로 가운데 배치*/
+	}
+	#table1 {
+		width: 60%; /* 가로폭 */
+		margin: 0 auto; /* 가로 가운데 배치 */
+	}
+	</style>
+</head>
+<body>
+	<table id="table1">
+		<tr>
+			<td>이미지</td>
+			<td>이미지 파일명</td>
+		</tr>
+		<tr>
+			<td><img src="https://picsum.photos/200/300" class="pic1" alt="">
+			</td>
+			<td>picture1.png</td>
+		</tr>
+		<tr>
+			<td><img src="https://picsum.photos/200/300" class="pic2" alt="">
+			</td>
+			<td>picture2.png</td>
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>go캠핑 : 산으로 바다로</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+	<link rel="stylesheet" href="css/design.css" />
+	<link rel="stylesheet" href="css/member.css" />
+</head>
+<body>
+	<h1 class="blind">go캠핑 로그인</h1>
+	<header>
+		<div class="header-wrap">
+			<div id="logo">
+				<a href="#">
+					<img src="images/logo.png" alt="go캠핑">
+				</a>
+			</div>
+			<nav>
+				<ul id="gnb">
+					<li><a href="#">소개</a></li>
+					<li><a href="#">캠핑상식</a></li>
+					<li><a href="#">캠핑장비</a></li>
+					<li><a href="#">캠핑지도</a></li>
+				</ul>
+			</nav>
+			<div id="search">
+				<form>
+					<label for="searchKey" class="blind">검색어</label>
+					<input type="search" name="searchKey" id="searchKey">
+					<input type="image" src="images/go_btn.png" alt="검색">
+				</form>
+			</div>
+		</div>
+	</header>
+	<div class="big-img">
+		<p>go캠핑 : 캠핑의 모든 것</p>		
+		<!-- <figure>
+			<img src="images/visual.jpg" alt="비주얼 이미지">
+			<figcaption class="blind">비주얼 이미지</figcaption>
+		</figure> -->
+	</div>
+	<section id="main">
+		<div class="main-wrap">
+			<h2>login &#124; 회원 로그인</h2>
+			<h3>go camping membership</h3>
+			<article>
+				<h4 class="blind">회원 로그인</h4>
+				<form autocomplete="off">
+					<div class="form-wrap">
+						<ul>
+							<li>
+								<label for="userId">아이디</label>
+								<input type="text" maxlength="16" placeholder="이메일주소나 계정명" name="userId" id="userId">
+							</li>
+							<li>
+								<label for="userPw">비밀번호</label>
+								<input type="password" maxlength="16" placeholder="영문자,특수문자 포함 16자" name="userPw" id="userPw">
+							</li>
+						</ul>
+						<div class="btns">
+							<input type="submit" value="로그인" id="submitBtn">
+							<input type="button" value="회원가입" id="regBtn">
+						</div>
+					</div>
+				</form>
+		</div>
+		</article>
+	</section>
+	<footer>
+		<hr>
+		<div class="footer-wrap">
+			<div id="logo2">
+				<a href="#">
+					<img src="images/logo.png" alt="go캠핑">
+				</a>
+			</div>
+			<address>
+				<p>상호 : go캠핑(구.캠핑클럽) 대표자 : 홍길동  사업자번호 : 광주-서구-제21호</p>
+				<p>전화번호 : 062)345-6789 고객상담 : cs@go-camp.com 개인정보책임자 : 홍길동</p>
+				<p>주소 : 광주광역시 서구 광천 1로 13 (광천동)</p>
+				<p>&copy; go캠핑. all rights reserved.</p>
+			</address>
+			<ul id="sns">
+				<li>
+					<a href="#">
+						<img src="images/youtube.png" alt="유투브채널">
+					</a>
+				</li>
+				<li>
+					<a href="#"><img src="images/insta.png" alt="인스타"></a>
+				</li>
+				<li>
+					<a href="#"><img src="images/facebook.png" alt="페이스북"></a>
+				</li>
+			</ul>
+		</div>
+	</footer>
+</body>
+</html>

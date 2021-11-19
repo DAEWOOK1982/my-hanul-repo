@@ -1,0 +1,154 @@
+@charset "UTF-8";
+
+.blind { 
+	display: none
+}
+
+.border0 {
+	border: 0 !important; /* 아이디 선택자보다 우선해서 스타일을 강제적용 */
+}
+.auto-height {
+	height: auto !important;
+}
+
+.main-wrap {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.main-wrap h2, .main-wrap h3{
+	text-align: center;
+	margin: 2rem 0;	
+}
+.main-wrap h2 {
+	font-size: 2.25rem;
+}
+.main-wrap h3 {
+	font-size: 1.250rem;
+}
+
+.form-wrap {
+	width: 800px;
+	height: 440px;
+	margin: 0 auto;
+ 	box-sizing: border-box;
+	padding: 50px;
+	border: 1px solid #808080;
+}
+.form-wrap li {
+	margin: 20px 0;
+}
+
+label { /* 원래의 label 스타일을 새롭게 재 정의 */
+	display: inline-block;
+	width: 20%; /* 1 rem == 16px == 100% */
+	font-size: 1.25rem;
+}
+label+input {
+	width: 79%;
+	box-sizing: border-box;
+	height: 60px;
+	font-size: 1.125rem;
+	text-indent: 1rem;
+}
+.btns {
+	display: flex;
+	justify-content: center;
+	margin: 30px 0 0 0;
+}
+#submitBtn {
+	border-radius: 30px; /* 테두리 반경 : (값 max --> 원) */
+	border: 2px solid #202F04;
+	background: none;	
+	width: 200px;
+	height: 60px;
+	font-size: 1.25rem;
+	margin: 0 20px 0 0;
+}
+#regBtn {
+	border-radius: 30px; /* 테두리 반경 : (값 max --> 원)	*/
+	background: #202F04;	
+	width: 200px;
+	height: 60px;
+	border: 2px solid #202F04;
+	color: white;
+	font-size: 1.25rem;
+}
+
+#userId {
+	width: 60%;
+}
+#idCheck {
+	width: 18.5%;
+	height: 60px;
+}
+#userMail {
+	width: 40%;
+}
+#at {
+	margin: 0 2.98%;
+}
+#mailList {
+	width: 30%;
+	height: 60px;
+	text-align: center;
+	font-size: 1.25rem;
+}
+
+/* =============== 모달 윈도우 ================= */
+.showing {
+	opacity: 1;
+}
+#modal {
+	display: none;
+	position: fixed; /* 기본값 */
+	background: rgba(0,0,0,.7); /* RGB투명도값 : 검정(0,0,0), 70% */
+	width: 100vw; /* viewport width : vw */
+	height: 100vh; /* viewport height : vh */
+	z-index: 9999; /* 순서 : 가장 최상위로~ */
+	transition: all 0.3s ease-in-out;
+}
+.modal-box {
+	position: absolute;
+	left:50%;
+	top: 50%;	
+	width: 1000px;
+	height: 600px;
+	margin-left: -500px;	
+	margin-top: -300px;
+	background: #f2f2f2;	
+}
+
+#modalExit {
+	position: absolute;
+	right: 50px;
+	top: 50px;
+	background: #191919;
+	padding: 50px;
+	color: white;
+	font-size: 2rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

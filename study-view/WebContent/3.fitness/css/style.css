@@ -1,0 +1,381 @@
+@charset "UTF-8";
+/* ========== 공통 스타일 ================= */
+body {
+	font: 14px/1.5 "Nanum Gothic", sans-serif;
+	color: #fff;
+	background-color: #4f0600;	
+}
+.none {
+	display: none;
+}
+a, a:link {
+	text-decoration: none;
+	color: inherit;
+}
+ul {
+	list-style: none;
+}
+
+/* ============== 각 부분 스타일 ============== */
+header {
+	background: #fff; /* 배경색상 :흰색(white), rgba(255,255,255,1) */
+}
+.header-wrap {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+.header-top {
+	height: 42px;
+}
+#logo {
+	float: left;
+}
+.header-top > nav {
+	float: right;
+}
+#tnb {
+	float: right;
+	color: #191919;
+}
+#tnb > li {
+	float: left;
+	margin: 0 0 0 10px;
+	line-height: 42px; /* 행간 : 공간의 높이와 같은 값을 쓰면 수직 중앙 배치 */
+	text-transform: capitalize;
+}
+#tnb a {
+	font-size: 14px;
+}
+#tnb a:hover {
+	text-decoration: overline underline;
+}
+
+#modelText {
+	clear: both; /* float를 left, right로 설정한 경우 다음 행에 영향을 미치는걸 해소 */
+	height: 365px;
+	overflow: hidden;
+}
+.model {
+	float: left;
+	position: absolute;
+}
+.text {
+	float: right;
+	color: #191919;
+	width: 720px;
+	height: 365px;
+	padding: 0 0 0 20px;
+	box-sizing: border-box;
+	position: relative; /* 상자를 p의 기준 요소로 인식하는 */
+}
+.text > p:nth-child(1) { /* build */
+	font-size: 60px;
+	text-transform: capitalize;
+	color: #000;
+	position: absolute;
+	top: 50px; /* 윗쪽 기준점으로 부터 아래 방향으로 50px 이동 */
+}
+.text > p:nth-child(2) { /* your */
+	font-size: 90px;
+	color: #cf160c;
+	position: absolute;
+	top: 80px;
+}
+.text > p:nth-child(3) { /* body */
+	font-size: 90px;
+	font-weight: bolder; /* 서체마다 약간 다름, 100~900, bold, bolder */
+	text-transform: capitalize;
+	color: #000;
+	position: absolute;
+	left: 200px; 
+	top: 100px;
+}
+/* p.398 애니메이션 적용 */
+.txt1 { /* build에 적용할 애니메이션과 시간, 규칙을 정의 */
+	animation: txt1ani 1s ease-in-out;
+}
+.txt2 {
+	animation: txt2ani 2s;
+}
+.txt3 {
+	animation-name: txt3ani;
+	animation-duration: 3s;
+	animation-timing-function: ease-in-out;
+	
+}
+@keyframes txt3ani {
+	0% { /* 처음 */
+		font-size:0
+	}
+	50% {
+		font-size: 120px; /* 중간 */
+	}
+	100% {
+		font-size: 90px; /* 끝 */
+	}
+}
+@keyframes txt1ani { /* 애니메이션 정의 */
+	0% {
+		opacity:0;
+		top: 0;
+	}
+	100% {
+		opacity:1;
+		top: 50px;
+	}
+}
+@keyframes txt2ani {
+	0% {
+		opacity: 0;
+		top:150px;		
+	}
+	100% {
+		opacity: 1;
+		top: 80px
+	}
+}
+
+/*======================= main-nav, gnb =======================*/
+.main-nav {
+	background: #830e04;
+	font-size: 16px;
+	text-align: right;
+}
+#gnb {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+#gnb > li {
+	display: inline-block;
+	padding: 15px;
+	position: relative; /* absolute의 새로운 기준점으로 사용 */
+}
+#gnb a:hover {
+	color: #ffe400;
+}
+#gnb > li:hover {
+	background: rgba(0,0,0,0.5);
+}
+#gnb > li:hover .lnb { /* gnb에 마우스 오버했을때 lnb 보여줘 */
+	display: block;
+}
+.lnb {
+	display: none;
+	position: absolute;
+	width: 100%;
+	top: 54px;
+	left:0;
+	background: rgba(0,0,0,.5);
+	text-align: center;
+}
+
+.lnb a {
+	display: block;
+	padding: 5px 0;
+}
+.lnb a:hover {
+	background: #ffe400;
+	color: #830e04 !important;
+}
+
+/* ==================== main ====================== */
+#main h3 {
+	text-align: center;
+	text-transform: uppercase;
+	margin:100px 0 0 0;
+}
+.titles {
+	text-align: center;
+	position: relative;
+}
+/* :hover, :active, :link, <-- pseudo class (의사 클래스, 슈도클래스..가상 클래스) */
+.titles::before { /* pseudo-element */
+	content:'';
+	display: block;
+	width: 60px;
+	height: 2px;
+	background: white;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 28px;
+}
+.titles h3 {
+	font-size: 1.5rem;
+}
+/* .titles h3::after {
+	content:'글자';
+} */
+.titles h4 {
+	font-size: 1.250rem;
+}
+.course-list {
+	overflow: hidden;
+}
+/* float, position 연습 vs display:flex; */
+
+.course-list li {
+	width: calc(33.33333333% - 10px);
+	margin: 0 5px;
+	float: left;
+	background: white;
+	text-align: center;
+	font-size: 0;
+	position: relative;
+}
+
+/* .course-list li:hover img {
+	opacity: .5;
+} */
+
+.course-list li a {
+	background: black;
+	display:block;
+}
+.course-list img {
+	width: 100%;
+	opacity: 1; /* 선명, 0:투명, 0.5? : 반투명 */
+	/* transition: all 0.3s ; */
+}
+.course-list li:hover .overlay {		
+	top: 0;	
+}
+.overlay {
+	/* display: none; */
+	position: absolute;
+	background: rgba(0,0,0,.5);
+	width: 100%;
+	height: 100%;
+	top: 100%;
+	transition: all 0.3s;
+}
+.bg-white {
+	background: white;
+}
+.bg-black {
+	background: black;
+}
+.bg-info {
+	background: url("../images/info.png") no-repeat right top;
+}
+.class-title {
+	color: #4f0600;
+	padding:15px 0;
+	font-size: 24px;	
+	font-weight: bolder;		
+}
+.course-list strong {
+	font-size: 20px;
+	background: #191919;
+	padding:10px 20px;
+	margin: 15px;
+	display: inline-block;
+}
+.article-wrap {
+	max-width: 1200px;	
+	margin: 0 auto;
+	overflow: hidden;
+}
+.article-wrap h5 {
+	font-size: 24px;
+	font-weight: bold;
+}
+.article-wrap h6 {
+	font-size: 20px;
+}
+.article-wrap p:nth-of-type(1),.article-wrap p:nth-of-type(4)  {
+	margin: 20px 0;
+}
+/* ============== sns =================== */
+#sns > li {
+	display: inline-block;
+	font-size: 2em;
+	margin-right: 10px;	
+}
+
+/* ============= ad ================== */
+.ad {	
+	height: 245px;
+	background: linear-gradient(90deg, #787c7b, #a9abaa);
+	position: relative;
+}
+.ad > h4 {
+	position: absolute;
+	right: 5%;
+	top: 40%;
+	color: #4f0600;
+	font-size: 28px;
+	text-transform: capitalize;
+	font-weight: bolder;
+}
+.ad > p {
+	position: absolute;
+	right: 5%;
+	top: 55%;
+	font-size: 16px;
+	color: #000;
+	text-align: right;
+}
+.topic-list {
+	overflow: hidden;
+	margin: 50px 0;
+}
+.topic-list > li {
+	width: calc(50% - 10px);
+	float: left;
+}
+.topic-list > li:nth-child(1) {
+	margin-right: 20px;
+}
+.topic-list figure {
+	font-size: 0;
+}
+.topic-list img {
+	max-width: 100%;
+}
+
+.list-title {
+	text-align: center;
+	text-transform: capitalize;
+	background: #000;
+	padding: 15px 0; /* height: 55px; line-height: 55px; */
+	color: white;
+	font-size: 18px;
+}
+.list-desc {
+	background: white;
+	color: #000;
+	font-size: 15px;
+	text-align: center;
+	padding: 15px 0;
+}
+
+/* ============== banner ================= */
+
+.banner {
+	position: absolute;
+	top: 20%;
+	right: 5%;
+}
+
+/* ================ footer ================= */
+
+.footer-wrap {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+.site-name {
+	font-size: 20px;
+	text-transform: capitalize;
+	text-align: center;
+	margin: 50px 0 20px;	
+}
+.footer-wrap p:nth-last-child(1) {
+	text-align: center;
+	padding: 30px 0 50px;
+}
+
+
+
+
+
