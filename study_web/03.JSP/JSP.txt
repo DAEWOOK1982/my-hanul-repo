@@ -40,14 +40,39 @@
 	- <jsp : useBean ~~ /> : 객체를 생성하는 태그
 	- <jsp : setProperty ~~ /> : DTO 객체에 있는 setter method 호출
 	- <jsp : getProperty ~~ /> : DTO 객체에 있는 getter method 호출
-	
-	
+	- <jsp : forward ~~ /> : forward() 방식으로 동적페이지 전환
+	- <jsp : include ~~ /> : 특정 페이지를 포함한다.
+		# <%@ include file="~~.jsp" %> ▶ 지시자
+		# <jsp : include page="~~.jsp"/> ▶ Action Tag
 
 ★ Scope : 공유범위
-
-
+1. pageContext scope
+	- pageContext 내장객체를 이용하여 바인딩(연결) 객체를 공유
+	- 객체를 만든(setAttribute()) jsp 페이지(현재 페이지)에서만 사용 가능
+	
+2. request scope
+	- request 내장객체를 이용하여 바인딩(연결) 객체를 공유
+	- 객체를 만든 jsp 페이지(현재 페이지)와 요청(forward())한 jsp 페이지에서만 사용 가능
+	
+3. session scope
+	- session 내장객체를 이용하여 바인딩(연결) 객체를 공유
+	- 모든 jsp 페이지에서 사용 가능
+	- 세션 속성값을 설정하여 지정한 시간 또는 웹브라우저가 열려 있는 동안만 사용 가능
+	
+4. application scope
+	- application 내장객체를 이용하여 바인딩(연결) 객체를 공유
+	- 모든 jsp 페이지에서 사용 가능
+	- 웹브라우저가 종료되어도 서버가 중지되기전까지 사용 가능
+	
 ★ EL(Expression Language) 문법(표현식)
-
+	○ 기본형식 ▶ ${ 출력값 } : 출력값은 아래와 같이 다양한 형태로 표현 가능
+		- ${ param.변수이름 } : jsp20, jsp24, jsp25
+		- ${ 객체이름.속성이름 } : jsp20
+		- ${ 속성이름 } : jsp21, jsp22
+		- ${ paramValues.배열이름[인덱스] } : jsp23, jsp24
+		- ${ 수식(계산식, 비교연산) } : jsp25
+		- ${ 배열이름[인덱스] }
+		- ${ 배열이름[인덱스].속성이름 }
 
 ★ JSTL(JSP Standard Tag Library)
 		
