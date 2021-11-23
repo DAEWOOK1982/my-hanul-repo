@@ -1,0 +1,6 @@
+google 검색 tern ide plugin down
+
+설치가이드대로 설치
+
+
+preferences -> javascript -> editor -> content assist -> enable auto activation 체크 -> Apply and Close
