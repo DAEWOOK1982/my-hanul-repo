@@ -1,0 +1,52 @@
+:: 브라우저 점수 테스트
+https://html5test.com/
+
+:: HTML
+
+   - 블럭요소(div, p, header, section , ....)
+   - 인라인 요소(img , a , strong, b, i, em...) <---> 글자
+
+:: 박스모델(Box Model)
+
+   - p.302
+   - CSS가 HTML을 박스(BOX) 취급
+   - margin, border, padding
+   1) 방향성 : 속성-top, -right, -bottom, -left  
+   2) 축약
+
+:: 코딩 컨벤션 (코드 컨벤션)
+  ※ Naming Rule 에 대해서도~ 찾아보세요~!
+  - PascalCase : 클래스 선언등 프로그래밍에서 사용
+  - camelCase : html, css등에서 사용하고 그밖에 프로그래밍 언어에서 사용
+  - kebab-case : html, css 등에서 사용하는 규칙
+  - snake_case : python 언어에서 사용하는 기본 규칙
+
+
+
+:: 파비콘, 패비콘
+
+  - 북마크(=즐겨찾기)할때 사이트 이름 옆에 표기하는 작은 이미지
+  - favorite + icon = favicon
+  - 최소 16x16 ~ 512 x 512 : 디바이스에 따라 알아서 적용
+  - *.ico / *.png : 단 두가지 포맷(format)만 사용 가능
+  - 이미지 캡쳐, 다운 --> favicon generator 활용 !! -->자동으로 다양한 크기의 파비콘으로 변경 --> 다운로드 및 적용!!
+  
+
+:: 엔터티
+
+   - 특수기호
+   - 브라우저가 그 의미를 해석할 수 있는 기호 (& : &amp; ...)
+   - https://entitycode.com
+   ※ 웹서비스에서 자주 사용하는  엔터티들만 모아둠!
+   - 엔터티 넘버, 엔터티 네임 구분!! (이름~)
+
+:: Can I Use.com
+
+   - https://caniuse.com
+   - 코드 --> 브라우저 호환성 검사
+   - 구글 > 키워드 mdn    --> 개발자 사이트 하단부분에도 표시 됨!
+
+
+
+
+

@@ -1,0 +1,34 @@
+
+:: 정규표현식
+(Regex , 레직스/레긱스?, 레귤러 익스프레션)
+Regular Expression : 문자열 찾아내는 방법, 치환, 매치
+ex> Form 에서 회원가입할때 아이디 생성 규칙!에 맞춰서 입력하게끔~
+※ HTML5에서는 pattern 속성으로 정규식 적용 --> 유효성 검증 --> submit 
+※ <input type="text" pattern="[a-z0-9]">
+1) 리터럴
+
+2) 객체  (new RegExp)
+
+:: 연습 1
+[사이트] https://regexr.com  , https://regex101.com, https://regexone.com [문제풀이] 
+
+:: 연습 2 
+- go캠핑.fig
+- 웹폼(회원가입).fig
+- h클리닉.fig
+※ 기존에 작성해두었던 view 파일을 열어보세요!
+※ regexr.com에서 만든 patter을
+   (1) html5에 적용 예
+   <input name="email" type="text" pattern="[a-zA-Z0-9]..패턴..." required title="다시 확인하세요">
+
+  (2) script에 적용 예
+   var regex = /[a-zA-Z0-9]..패턴.../;
+   var email = "test1234-2021@test119.com";
+   var matchText = email.match(regex);
+   var emailId = matchText[index];
+
+  
+
+
+
+

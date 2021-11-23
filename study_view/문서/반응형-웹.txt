@@ -1,0 +1,31 @@
+
+   http://192.168.0.60:8080/studyhtml5/4.widmice
+
+  :: 미디어 쿼리 (P.350) > 반응형 웹 (Responsive Web)
+
+    CSS 스타일을 이용해서 뷰포트의 크기에 따라 서로 다른 디자인을 보여주는 기법
+
+   1. 사용위치
+
+   1-1. HTML에 작성하기
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css" media="screen and (max-width:480px)">
+    </head>
+
+   1-2. CSS에 작성하기(권장)
+    @media screen and (max-width:768px) {
+	선택자 {
+                    속성 : 속성값;....
+              }
+    }
+
+   ※ 뷰포트 --> viewport ---> vp    <-------> html에서 meta:vp로 빠르게 작성!!
+   ※ 브레이크 포인트(break point) : 화면의 단위
+       Mobile : 320~ 475px;
+       Tablet  : 768px             [게임, 영화/영상, 필기?, 문서뷰어]	
+       PC : 1000px~ 
+   ※ gs.statcounter.com --> Resolution status / pc~mobile
+
+
+
+

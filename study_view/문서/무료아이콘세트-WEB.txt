@@ -1,0 +1,19 @@
+
+ :: 벡터기반 아이콘 사용하기
+
+  1) Material Icons : 완전 무료
+    - https://fonts.google.com/icons
+    - google에서 google font 기반으로 제공하는 아이콘 세트(900개 이상)
+    [가이드문서] https://developers.google.com/fonts/docs/material_icons
+   
+
+ 
+  2) FontAwesome : 무료, 유료
+     - https://fontawesome.com
+     - 회원가입이 필수(이메일 계정)
+     - 1600개 이상 무료 아이콘, PRO 버전은 연간 $100 결제 필요
+     [ 가이드문서 ] https://fontawesome.com/v5.15/how-to-use/on-the-web/referencing-icons/basic-use
+
+
+
+https://docs.google.com/spreadsheets/d/1sBM7BQnGnNjCOBLU1YU1m6Im29dcz7VCynZiwrkKD4U/edit#gid=405467628
