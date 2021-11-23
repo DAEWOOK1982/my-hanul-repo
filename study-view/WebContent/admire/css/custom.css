@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+/* ---------- admire bootstrap style custom ---------------------- */
+header {
+	background: url("../images/header-bg.png") fixed no-repeat left top / cover;
+}
+.btn-estimate {
+	color: white;
+	background-color: #2F97F6 !important;
+	border-color: #2F97F6 !important;
+}
+
+.slogan-text1 {
+	color: #1E6AB0;
+	font-size: 2rem;
+}
+
+.slogan-text2 {
+	color: rgba(25,25,25,.6); /* #191919 --> rgb(r,g,b) */
+	font-size: 1.250rem;
+}
+
+.bg-sky {
+	background-color: #F2F5FC !important
+}
+
+
+
+
+
+
+
+
+
+
