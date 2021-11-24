@@ -1,14 +1,14 @@
--- 테이블 생성
 create table tblBook(
-  title 	varchar2(30),
-  name 	  	varchar2(20),
-  isbn 	  	varchar2(20) primary key not null,
-  comp 	  	varchar2(20),
-  cost 	  	number,
-  qty		number,
-  price 	number
+     title varchar2(30),
+     name VARCHAR(20),
+     isbn VARCHAR(20) PRIMARY KEY not null,
+     com  VARCHAR(20),
+     cost number,
+     qty  number,
+     price number
 );
 
--- 전체레코드 검색
-select * from tblBook;
+select *
+from tblbook;
 
+alter table tblbook rename column com to comp;

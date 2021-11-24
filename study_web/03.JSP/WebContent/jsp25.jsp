@@ -45,15 +45,3 @@ num1과 num2가 같나요? ${param.num1 - param.num2 eq 0 ? "예" : "아니오"}
 -->
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
