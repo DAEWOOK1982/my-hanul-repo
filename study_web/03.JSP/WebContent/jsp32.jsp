@@ -29,7 +29,7 @@ if(num1 < num2){
 최소값 : <%= min %><br/>
 <br/>
 
-○ JSTL & EL<br/>
+○ JSTL &amp; EL<br/>
 첫 번째 정수 : ${param.num1}<br/>
 두 번째 정수 : ${param.num2}<br/>
 

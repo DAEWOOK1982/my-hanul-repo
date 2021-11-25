@@ -27,24 +27,32 @@ public class InsertServlet extends HttpServlet {
 		
 		
 		//② DAO 클래스를 통해서 DataBase 연동
+		
 		BookDAO dao = new BookDAO();
+		boolean in = dao.isbnCheck(dto.getIsbn());
 		int succ = dao.bookInsert(dto);
 		
 		//③ 결과를 응답(html)
 		response.setContentType("text/html; charset=utf-8");	//MINE Type
 		PrintWriter out = response.getWriter();		//출력스트림
-		if(succ >0) {
-			out.println("<script>alert('도서정보 입력성공');</script>");
+		if(in) {
+			if(succ >0) {
+				out.println("<script>alert('도서정보 입력성공');</script>");
+				out.println("<a href='bookMain.html'>도서정보 입력하기</a>");
+				out.println("<br/>");
+				out.println("<a href='gals.do'>전체도서 정보보기</a>");
+			}else {
+				out.println("<script>alert('도서정보 입력실패');</script>");
+				out.println("<a href='bookMain.html'>도서정보 입력하기</a>");
+				out.println("<br/>");
+				out.println("<a href='gals.do'>전체도서 목록보기</a>");
+			}
+		}else {
+			out.println("<script>alert('ISBN 중복확인 도서정보를 다시 입력하세요.');</script>");
 			out.println("<a href='bookMain.html'>도서정보 입력하기</a>");
 			out.println("<br/>");
 			out.println("<a href='gals.do'>전체도서 정보보기</a>");
-		}else {
-			out.println("<script>alert('도서정보 입력실패');</script>");
-			out.println("<a href='bookMain.html'>도서정보 입력하기</a>");
-			out.println("<br/>");
-			out.println("<a href='gals.do'>전체도서 목록보기</a>");
 		}
 
-	}
-
+}
 }

@@ -91,3 +91,9 @@
 			
 		- 함수 Tag : JAVA에서 String Class에서 제공하는 메소드 ▶ function
 			<%@ taglib prifix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+			
+			
+			
+			
+			
+			

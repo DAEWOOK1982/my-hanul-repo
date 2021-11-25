@@ -38,9 +38,32 @@ public class BookDAO {				//DB와 연동
 		}
 	}//dbClose()
 	
-	//회원가입
+	//isbn 중복체크
+	public boolean isbnCheck(String isbn) {
+		conn= getConn();
+		String sql = "select count(*) cnt from tblbook where isbn = ? ";
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, isbn);
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				if(rs.getInt("cnt")==1) {
+					return false;
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("isbnCheck() Exception!!!!");
+		} finally {
+			dbClose();
+		}
+		return true;
+	}//isbnCheck()
+	
+	//도서정보입력
 	public int bookInsert(BookDTO dto) {
 		conn = getConn(); //DB접속
+		
 		String sql = "insert into tblbook values(?, ?, ?, ?, ?, ?, ?)";
 		int succ = 0;
 		try {
@@ -63,7 +86,7 @@ public class BookDAO {				//DB와 연동
 		return succ;
 	}//bookInsert()
 	
-	//전체회원 목록 검색
+	//전체도서 목록 검색
 	public ArrayList<BookDTO> bookSearchAll() {
 		conn = getConn();	//DB접속
 		String sql = "select * from tblbook";  //SQL 문장 작성
@@ -91,7 +114,7 @@ public class BookDAO {				//DB와 연동
 		return list;
 	}//bookSearchAll
 	
-	//회원정보 삭제
+	//도서정보 삭제
 	public int bookDelete(String isbn) {
 		conn = getConn();
 		String sql = "delete from tblbook where isbn = ?";	//SQL 문장 작성
