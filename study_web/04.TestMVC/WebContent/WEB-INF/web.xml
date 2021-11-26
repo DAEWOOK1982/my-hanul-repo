@@ -9,4 +9,33 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <display-name>InsertServlet</display-name>
+    <servlet-name>InsertServlet</servlet-name>
+    <servlet-class>InsertServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InsertServlet</servlet-name>
+    <url-pattern>/is.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <display-name>GetAllListServlet</display-name>
+    <servlet-name>GetAllListServlet</servlet-name>
+    <servlet-class>GetAllListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetAllListServlet</servlet-name>
+    <url-pattern>/gals.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <display-name>DeleteServlet</display-name>
+    <servlet-name>DeleteServlet</servlet-name>
+    <servlet-class>DeleteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteServlet</servlet-name>
+    <url-pattern>/ds.do</url-pattern>
+  </servlet-mapping>
+
+  
 </web-app>
