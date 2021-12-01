@@ -5,8 +5,8 @@
 <configuration>
 	<properties resource="com/hanul/mybatis/db.properties"/>
 	<typeAliases>
-		<typeAlias type="com.hanul.study.MemberDTO" alias="MemberDTO"/>
-		<typeAlias type="com.hanul.study.SearchDTO" alias="SearchDTO"/>
+		<typeAlias type="com.hanul.dto.BoardDTO" alias="BoardDTO"/>
+		<typeAlias type="com.hanul.dto.SearchDTO" alias="SearchDTO"/>
 	</typeAliases>
 	<environments default="development">
 		<environment id="development">
@@ -20,6 +20,6 @@
 		</environment>
 	</environments>
 	<mappers>
-		<mapper resource="com/hanul/mybatis/memberMapper.xml" />
+		<mapper resource="com/hanul/mybatis/boardMapper.xml" />
 	</mappers>
 </configuration>

@@ -78,6 +78,14 @@ public class MemberDAO {
 		return succ;
 	}//memberUpdate()
 	
+	//조건검색
+	public List<MemberDTO> memberSearch(SearchDTO dto) {
+		SqlSession session = sqlMapper.openSession();
+		List<MemberDTO> list = null;
+		list = session.selectList("memberSearch", dto);
+		session.close();
+		return list;
+	}//memberSearch()
 	
 	
 	
