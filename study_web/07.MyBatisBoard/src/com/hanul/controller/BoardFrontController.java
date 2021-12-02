@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.hanul.action.Action;
 import com.hanul.action.ActionForward;
+import com.hanul.action.BoardDeleteAction;
+import com.hanul.action.BoardDetailAction;
 import com.hanul.action.BoardInsertAction;
 import com.hanul.action.BoardListAction;
 
@@ -41,6 +43,12 @@ public class BoardFrontController extends HttpServlet {
 			forward.setRedirect(false);
 		}else if(command.equals("/boardInsert.do")) {
 			action = new BoardInsertAction();
+			forward = action.execute(request, response);
+		}else if(command.equals("/boardDetail.do")) {
+			action = new BoardDetailAction();
+			forward = action.execute(request, response);
+		}else if(command.equals("/boardDelete.do")) {
+			action = new BoardDeleteAction();
 			forward = action.execute(request, response);
 		}
 		

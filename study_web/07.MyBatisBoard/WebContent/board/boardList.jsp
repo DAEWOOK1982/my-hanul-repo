@@ -91,7 +91,7 @@ List<BoardDTO> list = (List<BoardDTO>) request.getAttribute("list");	//바인딩
 		<c:forEach var="i" begin="0" end="${fn:length(list) - 1}" step="1">
 			<tr align="center">
 				<td>${fn:length(list) - i}</td>
-				<td>${list[i].b_subject}</td>
+				<td><a href="boardDetail.do?b_num=${list[i].b_num}">${list[i].b_subject}</a></td>
 				<td>${list[i].b_writer}</td>
 				<td>${list[i].b_date}</td>
 				<td>${list[i].b_readcount}</td>

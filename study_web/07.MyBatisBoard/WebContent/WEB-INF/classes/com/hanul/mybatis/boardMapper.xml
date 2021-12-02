@@ -12,4 +12,23 @@
 		insert into tblBoard(b_num, b_subject, b_pwd, b_content, b_writer, b_date, b_readcount)
 			values(b_num_seq.nextval, #{b_subject}, #{b_pwd}, #{b_content}, #{b_writer}, sysdate, 0)
 	</insert>
+	
+	<select id="boardDetail" parameterType="int" resultType="BoardDTO">
+		select * from tblBoard where b_num = #{b_num}
+	</select>
+	
+	<update id="boardReadCountUpdate" parameterType="int">
+		update tblBoard set b_readcount = b_readcount + 1 where b_num = #{b_num}
+	</update>
+	
+	<delete id="boardDelete" parameterType="int">
+		delete from tblBoard where b_num = #{b_num}
+	</delete>
 </mapper>
+
+
+
+
+
+
+
