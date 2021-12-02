@@ -14,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
     ImageView imgv1, imgv2, imgv3, imgv4;
    // ArrayList<ImageView> listimg = new ArrayList<>();
    // ImageView[] arrimg = { findViewById(R.id.imgv1) };
-    int[] index = {1 , 1};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,32 +28,22 @@ public class MainActivity extends AppCompatActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                imgv1.setVisibility(View.GONE);
-                imgv2.setVisibility(View.GONE);
-                if(index[0] == 1){
+                //버튼 1을 눌렀을때 코딩을 작성하면 되는 부분
+                //visibility속성을 이용하는 방법
+                if (imgv1.getVisibility() == View.VISIBLE){
+                    imgv1.setVisibility(View.GONE);
                     imgv2.setVisibility(View.VISIBLE);
-                    index[0] = 0;
-                }else{
+                }else if(imgv2.getVisibility() == View.VISIBLE ){
                     imgv1.setVisibility(View.VISIBLE);
-                    index[0] =1;
+                    imgv2.setVisibility(View.GONE);
                 }
             }
         });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-       btn2.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               imgv3.setVisibility(View.GONE);
-               imgv4.setVisibility(View.GONE);
-               if(index[1] == 1){
-                   imgv3.setVisibility(View.VISIBLE);
-                   index[1] = 0;
-               }else{
-                   imgv4.setVisibility(View.VISIBLE);
-                   index[1] =1;
-               }
-           }
-       });
-
+            }
+        });
     }
 }
