@@ -101,7 +101,16 @@ List<BoardDTO> list = (List<BoardDTO>) request.getAttribute("list");	//바인딩
 	
 	<tr align="center">
 		<td colspan="5">
-			<input type="button" value="글쓰기" onclick="location.href='boardWriteForm.do'"/>
+			<form action="boardSearch.do" method="post">
+				<select name="part">
+					<option value="b_subject">제목</option>
+					<option value="b_content">내용</option>
+					<option value="b_writer">작성자</option>
+				</select>
+				<input type="text" name="searchData" required="required"/>
+				<input type="submit" value="검색하기"/>
+				<input type="button" value="글쓰기" onclick="location.href='boardWriteForm.do'"/>
+			</form>
 		</td>
 	</tr>
 </table>

@@ -7,23 +7,31 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.hanul.dao.BoardDAO;
+import com.hanul.dto.BoardDTO;
 
-public class BoardDeleteAction implements Action{
+public class BoardUpadateAction implements Action {
+
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)
 		throws ServletException, IOException {
-		//클라이언트 요청
+		//클라이언트의 요청
 		request.setCharacterEncoding("utf-8");
-		int b_num = Integer.parseInt(request.getParameter("b_num"));
+		BoardDTO dto = new BoardDTO();
+		dto.setB_num(Integer.parseInt(request.getParameter("b_num")));
+		dto.setB_writer(request.getParameter("b_writer"));
+		dto.setB_subject(request.getParameter("b_subject"));
+		dto.setB_content(request.getParameter("b_content"));
+		dto.setB_pwd(request.getParameter("b_pwd"));
 		
 		//비지니스 로직
 		BoardDAO dao = new BoardDAO();
-		dao.boardDelete(b_num);
+		dao.boardUpdate(dto);
 		
 		//프리젠테이션 로직
 		ActionForward forward = new ActionForward();
-		forward.setPath("boardList.do");
-		forward.setRedirect(true);	//true : sendRedirect() 페이지 전환 → url 변경된다.		
+		forward.setPath("boardDetail.do?b_num=" + dto.getB_num());
+		forward.setRedirect(true);
 		return forward;
 	}
+
 }

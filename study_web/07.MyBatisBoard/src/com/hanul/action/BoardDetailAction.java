@@ -1,8 +1,8 @@
 package com.hanul.action;
 
 import java.io.IOException;
-import java.rmi.ServerException;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -12,7 +12,7 @@ import com.hanul.dto.BoardDTO;
 public class BoardDetailAction implements Action{
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)
-		throws ServerException, IOException {
+		throws ServletException, IOException {
 		//클라이언트의 요청
 		request.setCharacterEncoding("utf-8");	//인코딩설정
 		int b_num = Integer.parseInt(request.getParameter("b_num"));	//매개변수를 받는다

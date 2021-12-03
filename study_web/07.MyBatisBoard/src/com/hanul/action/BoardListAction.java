@@ -1,9 +1,9 @@
 package com.hanul.action;
 
 import java.io.IOException;
-import java.rmi.ServerException;
 import java.util.List;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -15,7 +15,7 @@ import com.hanul.dto.BoardDTO;
 public class BoardListAction implements Action{
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)
-		throws ServerException, IOException {
+		throws ServletException, IOException {
 		//① 클라이언트의 요청을 받는다 : 전달되는 매개변수가 없다.
 
 		//② 비지니스 로직 : DAO 연동하여 게시판의 전체 목록을 가져오는 작업

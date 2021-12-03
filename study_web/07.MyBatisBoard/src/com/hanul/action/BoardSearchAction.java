@@ -1,29 +1,37 @@
 package com.hanul.action;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.hanul.dao.BoardDAO;
+import com.hanul.dto.BoardDTO;
+import com.hanul.dto.SearchDTO;
 
-public class BoardDeleteAction implements Action{
+public class BoardSearchAction implements Action{
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)
 		throws ServletException, IOException {
 		//클라이언트 요청
 		request.setCharacterEncoding("utf-8");
-		int b_num = Integer.parseInt(request.getParameter("b_num"));
+		String part = request.getParameter("part");
+		String searchData = request.getParameter("searchData");
+		SearchDTO dto = new SearchDTO();
+		dto.setPart(part);
+		dto.setSearchData("%" + searchData + "%");
 		
 		//비지니스 로직
 		BoardDAO dao = new BoardDAO();
-		dao.boardDelete(b_num);
+		List<BoardDTO> list = dao.boardSearch(dto);
+		request.setAttribute("list", list);
 		
 		//프리젠테이션 로직
 		ActionForward forward = new ActionForward();
-		forward.setPath("boardList.do");
-		forward.setRedirect(true);	//true : sendRedirect() 페이지 전환 → url 변경된다.		
+		forward.setPath("board/boardSearchList.jsp");
+		forward.setRedirect(false);		
 		return forward;
 	}
 }

@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import com.hanul.dto.BoardDTO;
+import com.hanul.dto.SearchDTO;
 
 public class BoardDAO {
 	private static SqlSessionFactory sqlMapper;
@@ -74,9 +75,22 @@ public class BoardDAO {
 		session.close();
 	}//boardDelete()
 	
+	//글 수정 : update
+	public void boardUpdate(BoardDTO dto) {
+		SqlSession session = sqlMapper.openSession();
+		session.update("boardUpdate", dto);
+		session.commit();
+		session.close();
+	}//boardUpdate()
 	
-	
-	
+	//조건검색 : select
+	public List<BoardDTO> boardSearch(SearchDTO dto) {
+		SqlSession session = sqlMapper.openSession();
+		List<BoardDTO> list = null;
+		list = session.selectList("boardSearch", dto);
+		session.close();
+		return list;
+	}//boardSearch()
 	
 	
 	

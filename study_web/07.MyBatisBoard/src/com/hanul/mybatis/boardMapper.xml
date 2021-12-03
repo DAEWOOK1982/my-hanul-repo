@@ -24,11 +24,17 @@
 	<delete id="boardDelete" parameterType="int">
 		delete from tblBoard where b_num = #{b_num}
 	</delete>
+	
+	<update id="boardUpdate" parameterType="BoardDTO">
+		update tblBoard
+		set b_writer = #{b_writer},
+			b_subject = #{b_subject},
+			b_content = #{b_content},
+			b_pwd = #{b_pwd}
+		where b_num = #{b_num}
+	</update>
+	
+	<select id="boardSearch" parameterType="SearchDTO" resultType="BoardDTO">
+		select * from tblBoard where upper(${part}) like upper(#{searchData}) order by b_num desc
+	</select>
 </mapper>
-
-
-
-
-
-
-

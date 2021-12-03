@@ -32,7 +32,24 @@ function fnDelete(b_pwd){
 			document.getElementById("userPwd").focus();
 		}
 	}
-}
+}//fnDelete()
+
+function fnUpdate(b_pwd){
+	var userPwd = document.getElementById("userPwd").value;
+	//alert("User Pwd : " + userPwd + "\nDB Pwd : " + b_pwd);
+	
+	if(userPwd.trim() == ""){	//비밀번호 미입력
+		alert("비밀번호를 입력하세요!");
+		document.getElementById("userPwd").value = "";
+		document.getElementById("userPwd").focus();
+	}else if(userPwd != b_pwd){	//비밀번호 불일치
+		alert("비밀번호가 잘못 입력되었습니다!");
+		document.getElementById("userPwd").value = "";
+		document.getElementById("userPwd").focus();
+	}else{	//비밀번호 일치
+		location.href = "boardUpdateForm.do?b_num=" + ${dto.b_num};
+	}
+}//fnUpdate()
 </script>
 </head>
 <body>
@@ -59,7 +76,7 @@ function fnDelete(b_pwd){
 		<th>비밀번호</th>
 		<td colspan="3">
 			<input type="password" id="userPwd"/>
-			<input type="button" value="수정" onclick="fnUpdate()"/>
+			<input type="button" value="수정" onclick="fnUpdate('${dto.b_pwd}')"/>
 			<input type="button" value="삭제" onclick="fnDelete('${dto.b_pwd}')"/>
 			<input type="button" value="목록보기" onclick="location.href='boardList.do'"/>
 		</td>
