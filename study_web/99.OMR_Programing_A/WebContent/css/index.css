@@ -1,0 +1,127 @@
+@charset "UTF-8";
+/* 폰트 */
+@font-face {
+	font-family: 'Cafe24Ssurround';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face { /* 전체 기본 폰트 */
+	font-family: 'Cafe24SsurroundAir';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* 전체영역 설정 */
+* {
+	font-family: 'Cafe24SsurroundAir';
+	margin: 0px auto;
+	padding: 0px;
+	box-sizing: border-box;
+	outline: none;
+	text-align: center;
+	outline: none;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh; /* 반응형 웹 : 사이드 조절 시 일정한 간격 유지 */
+}
+
+/* 배경화면 투명도 조절 */
+.container::before {
+	content: "";
+	position: absolute;
+	background-color: #212529; 
+	background-position : center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	opacity: 0.8;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	background-position: center;
+}
+
+/* 박스 지정 */
+#wrap {
+	background-color: #f8f9fa;
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+	position: relative;
+	overflow: hidden;
+	width: 500px;
+	max-width: 100%;
+	min-height: 350px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+th {
+	font-family: 'Cafe24Ssurround';
+}
+
+ #wrap h1 {
+ 	font-family: 'Cafe24Ssurround';
+ }
+ 
+ #wrap span {
+ 	margin-top : 50px;
+ }
+ 
+ table {
+ 	margin-top: 20px;
+ }
+ 
+ th {
+ 	width: 150px;
+ }
+ 
+ th,td {
+ 	height: 50px;
+ 	line-height: 50px;
+ }
+
+input[type="text"], input[type="number"] {
+	background: none;
+	background-color: #dee2e6;
+	display: inline-block;
+	text-align: center;
+	border: none;
+	width: 220px;
+	height: 30px;
+	line-height: 30px;
+	outline: none;
+	font-size: 1.1rem;
+	padding: 12px 15px;
+}
+
+input[type="submit"], input[type="reset"], input[type="button"] {
+	background: none;
+	display: inline-block;
+	border: 2px solid #212529;
+	text-align: center;
+	outline: none;
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	cursor: pointer;
+	font-size: 1.1rem;
+}
+
+/* input type="number" 증감 화살표 안보이게 */
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button
+	{
+	-webkit-appearance: none;
+	margin: 0;
+}

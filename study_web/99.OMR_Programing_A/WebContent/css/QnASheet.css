@@ -1,0 +1,237 @@
+@charset "UTF-8";
+/* 폰트 */
+@font-face { /* 문제 번호 및 타이틀 */
+	font-family: 'Cafe24Ssurround';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face { /* 전체 기본 폰트 */
+	font-family: 'Cafe24SsurroundAir';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* 전체영역 설정 */
+* {
+	font-family: 'Cafe24SsurroundAir';
+	margin: 0px auto;
+	padding: 0px;
+	box-sizing: border-box;
+	outline: none;
+	text-align: center;
+	outline: none;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh; /* 반응형 웹 : 사이드 조절 시 일정한 간격 유지 */
+	width: 100vw;
+}
+
+/* 배경화면 투명도 조절 */
+.container::before {
+	content: "";
+	position: absolute;
+	background-color: #212529;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	opacity: 0.8;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+}
+
+/* 박스 지정 */
+#wrap {
+	background-color: #e9ecef;
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px
+		rgba(0, 0, 0, 0.22);
+	position: relative;
+	overflow: hidden;
+	width: 1500px;
+	max-width: 100%;
+	min-height: 800px;
+}
+
+#tester {
+	position: absolute;
+	left: 20px;
+	top: 15px;
+}
+
+#time {
+	position: absolute;
+	right: 350px;
+	top: 20px;
+}
+
+#output {
+	color: #c92a2a;
+}
+
+#testerid, #testername {
+	background: none;
+	background-color: #dee2e6;
+	display: inline-block;
+	text-align: center;
+	border: none;
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	outline: none;
+	font-size: 1rem;
+	padding: 12px 15px;
+}
+
+#Question {
+	position: absolute;
+	top: 10px;
+	left: 0;
+	width: 80%;
+	height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+/* 문제지 너비 지정 */
+#QuestionSheet {
+	width: 1140px;
+	height: 680px;
+	overflow: hidden;
+}
+
+.test {
+	position: relative;
+	display: flex;
+	height: 680px;
+}
+
+.test>img {
+	width: 1140px;
+	height: 680px;
+}
+
+#AnswerSheet {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 20%;
+	height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#AnswerSheet>h2 {
+	font-family: 'Cafe24Ssurround';
+	position: absolute;
+	top: 20px;
+}
+
+#scroll { /* 스크롤에서 자동 올라가는거 차단 */
+	overflow: scroll;
+	width: 100%;
+	height: 83%;
+	position: absolute;
+	top: 70px;
+	/* 스크롤 안보이게 */
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+#scroll::-webkit-scrollbar {
+	display: none; /* Chrome, Safari, Opera*/
+}
+
+#userAnswer {
+	width: 90%;
+	margin: 0px auto;
+	background-color: white;
+}
+
+#userAnswer, tr, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	height: 35px;
+	line-height: 35px;
+}
+
+#uswerAnswer th {
+	font-family: 'Cafe24Ssurround';
+}
+
+/* 이미지 설정(OMR) 이미지 */
+img {
+	width: 25px;
+	height: 25px;
+}
+
+input[type="radio"] {
+	display: none; /* 라벨 클릭해도 올라가지 않게 */
+}
+
+input[type=radio]+label {
+	cursor: pointer;
+	display: block;
+	width: 25px;
+	height: 25px;
+}
+
+[type=radio]:checked+label {
+	background: url('images/black.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#submitBtn, #resetBtn {
+	background: none;
+	border: 2px solid #212529;
+	text-align: center;
+	outline: none;
+	width: 70px;
+	height: 30px;
+	line-height: 30px;
+	cursor: pointer;
+	font-size: 1rem;
+	margin-top: 50px;
+	margin-bottom: 20px;
+}
+
+#submitBtn {
+	margin-right: 20px;
+}
+
+[type=button] {
+	display: inline-block;
+	background: none;
+	border: 2px solid #212529;
+	text-align: center;
+	outline: none;
+	width: 70px;
+	height: 20px;
+	line-height: 20px;
+	cursor: pointer;
+	font-size: 0.8rem;
+	margin-top: 10px;
+}
+
+#hide{
+	display: none;
+}

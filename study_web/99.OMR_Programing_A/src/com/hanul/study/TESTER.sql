@@ -1,0 +1,23 @@
+CREATE TABLE TESTER_A (
+  TESTER_ID NUMBER(5) PRIMARY KEY NOT NULL,
+  TESTER_NAME VARCHAR2(20),
+  PUP VARCHAR2(10),
+  SCORE NUMBER(3),
+  TEST VARCHAR2(10)
+);
+
+INSERT INTO TESTER_A VALUES (10000, '가나다', '불합격', 0, '미응시'); 
+INSERT INTO TESTER_A VALUES (10001, '라마바', '불합격', 0, '미응시'); 
+INSERT INTO TESTER_A VALUES (10002, '사아자', '불합격', 0, '미응시'); 
+INSERT INTO TESTER_A VALUES (10003, '차카타', '불합격', 0, '미응시'); 
+INSERT INTO TESTER_A VALUES (10004, '가가가', '불합격', 0, '미응시');
+INSERT INTO TESTER_A VALUES (10005, '나나나', '불합격', 0, '미응시');
+INSERT INTO TESTER_A VALUES (10006, '다다다', '불합격', 0, '미응시');
+INSERT INTO TESTER_A VALUES (10007, '라라라', '불합격', 0, '미응시');
+INSERT INTO TESTER_A VALUES (10008, '마마마', '불합격', 0, '미응시');
+INSERT INTO TESTER_A VALUES (10009, '바바바', '불합격', 0, '미응시');
+INSERT INTO TESTER_A VALUES (10010, '사사사', '불합격', 0, '미응시');
+INSERT INTO TESTER_A VALUES (10011, '아아아', '불합격', 0, '미응시');
+INSERT INTO TESTER_A VALUES (10012, '자자자', '불합격', 0, '미응시');
+
+COMMIT;

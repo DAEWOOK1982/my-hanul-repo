@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hanul.mybatis.testerMapper.xml">
+	<!-- SQL 문장 작성 -->
+	<!-- 
+		태그형식으로 제공
+		<insert | delete | update | select + 속성>
+			id 속성 (식별자 ) : DAO에서 설정한 값 
+			session.insert("memberInsert", dto);
+			parameterType 속성 : 매개변수 타입 Class, PDT : 생략 가능
+	 		- 매개변수 처리 : dto.getName() → #{속성명}
+	 		SQL 문장 마지막에 세미콜론(;) 입력하지 않는다.
+	 -->
+	<!-- $ : 유동적일 때(테이블이나 컬럼명을 전달하고 싶을 때 사용) #고정적일때 -->
+	<select id="testerSearch" parameterType="SearchDTO" resultType="TesterDTO">
+		SELECT * FROM TESTER_A WHERE UPPER(${part}) LIKE UPPER(#{searchData})
+	</select>
+</mapper>
