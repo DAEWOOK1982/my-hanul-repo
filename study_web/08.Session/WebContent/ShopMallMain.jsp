@@ -23,7 +23,18 @@ pageContext.setAttribute("price", price);
 <title>Shop Mall Main</title>
 <script type="text/javascript">
 function fnCart(name, price){
-	alert("제품명 : " + name + "\n제품가격 : " + price);
+	//alert("제품명 : " + name + "\n제품가격 : " + price);
+	if(confirm("장바구니에 담으시겠습니까?")){
+		location.href = "CartProcess.jsp?name=" + name + "&price=" + price;
+	}
+	return false;
+}
+
+function fnView(){
+	if(confirm("장바구니 보기를 하시겠습니까?")){
+		location.href = "CartView.jsp";
+	}
+	return false;
 }
 </script>
 </head>

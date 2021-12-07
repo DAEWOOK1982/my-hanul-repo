@@ -11,6 +11,10 @@ public class CheckAnswerAction implements Action {
 	public ActionForward excute(HttpServletRequest request, HttpServletResponse response)
 		throws ServletException, IOException {
 		//클라이언트의 요청을 받는다.
+		request.setCharacterEncoding("utf-8");
+		
+		//비지니스 로직
+		
 		
 		
 		return null;

@@ -18,4 +18,9 @@
 	<select id="checkStudent" parameterType="com.hanul.dto.StudentDTO" resultType="String">
 		select code from student where code = #{code} and name = #{name}
 	</select>
+	
+	<!-- 등록된 수험생 입력답안 가져오기 -->
+	<select id="inputAnswerSearch" parameterType="TestDTO">
+		select * from testanswer
+	</select>
 </mapper>
