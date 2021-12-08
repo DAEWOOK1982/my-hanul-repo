@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+input::-webkit-outer-spin-button,
+
+input::-webkit-inner-spin-button {
+
+    -webkit-appearance: none;
+
+    margin: 0;
+
+}
+.btn-primary{
+	margin-left:35%;
+	margin-right: 10%;
+    margin-top: 5%;
+}
+.btn-danger{
+	margin-top: 5%;
+}
