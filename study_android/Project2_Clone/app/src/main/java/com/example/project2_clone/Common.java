@@ -3,6 +3,9 @@ package com.example.project2_clone;
 import android.net.http.AndroidHttpClient;
 import android.util.Log;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -16,6 +19,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Common {
 
@@ -43,15 +48,35 @@ public class Common {
         //실제로 url매핑을 접근해서 응답(res)을 준값을 그대로 가지고옴.
         //InputStream형태로 받아옴.
        try{
-        builder.addTextBody("key" , "valueAndroid" ,
+        //UserDTO dto = new UserDTO(10,"and_userId" , "and_usermsg");
+        ArrayList<UserDTO> list = new ArrayList<>();
+        list.add(new UserDTO(1,"a1","데이터"));
+        list.add(new UserDTO(2,"a1","b2"));
+        list.add(new UserDTO(3,"a1","b2"));
+        list.add(new UserDTO(4,"a1","b2"));
+        list.add(new UserDTO(5,"a1","b2"));
+        Gson gson = new Gson();
+        String data = gson.toJson(list);
+        builder.addTextBody("dto" , data ,
                 ContentType.create("Multipart/related" , "UTF-8"));
         httpClient = AndroidHttpClient.newInstance("Android");
+        //conn , ps<-// ps( sql ) , ps.setInt , ps.setString
         httpPost = new HttpPost(postUrl);
         httpPost.setEntity(builder.build());//파라메터를 추가할수있는부분.
         InputStream in = httpClient.execute(httpPost).getEntity().getContent();
         if(in != null){
-            Log.d(TAG, "testConn: succ" + rtnStr(in));
-            String data = rtnStr(in);
+
+            ArrayList<UserDTO> revList
+                    = gson.fromJson(new InputStreamReader(in) ,
+                        new  TypeToken<List<UserDTO>>() {}.getType());
+            for (UserDTO dto: revList) {
+                Log.d(TAG, "testConn: succ" + dto.getUser_id());
+                Log.d(TAG, "testConn: succ" + dto.getUser_msg());
+                Log.d(TAG, "testConn: succ" + dto.getRefid());
+            }
+
+           // String data = rtnStr(in);
+          //  Fragment2.data = data;
             Log.d(TAG, "testConn: succ" + data);
         }else{
             Log.d(TAG, "testConn: fail");

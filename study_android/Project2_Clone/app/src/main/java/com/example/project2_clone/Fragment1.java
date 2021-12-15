@@ -25,6 +25,7 @@ public class Fragment1 extends Fragment {
     ImageView imgv1 , imgv2 , imgv3;
     TextView tv1;
     Animation flowAnim , scaleAnim;//from 100%P > 0%P ?
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

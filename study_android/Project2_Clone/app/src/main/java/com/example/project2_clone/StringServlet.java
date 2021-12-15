@@ -7,7 +7,7 @@ import java.io.IOException;
 public class StringServlet extends AsyncTask<String,String,String> {
     @Override
     protected String doInBackground(String... strings) {
-        Common common = new Common("asdf.and");//Controller로 요청
+        Common common = new Common("list.and");//Controller로 요청
         try {
             common.testConn();
         } catch (IOException e) {
