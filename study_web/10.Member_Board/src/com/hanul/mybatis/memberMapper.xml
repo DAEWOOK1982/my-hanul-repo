@@ -17,5 +17,28 @@
 		select * from boardMember where member_id = #{member_id}
 	</select>
 	
+	<select id="getMember_AllList" resultType="MemberDTO">
+		select * from boardMember
+	</select>
+	
+	<delete id="deleteMember" parameterType="String">
+		delete from boardMember where member_id = #{member_id}
+	</delete>
+	
+	<select id="getDetailMember" parameterType="String" resultType="MemberDTO">
+		select * from boardMember where member_id = #{member_id}
+	</select>
+	
+	<select id="getMember_pw" parameterType="String" resultType="String">
+		select member_pw from boardMember where member_id = #{id}
+	</select>
+	
+	
+	
+	
+	
+	
+	
+	
 	
 </mapper>
