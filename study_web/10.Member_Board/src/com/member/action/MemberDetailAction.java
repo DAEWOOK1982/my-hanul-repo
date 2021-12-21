@@ -1,49 +1,43 @@
-package com.board.action;
+package com.member.action;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.board.study.BoardDAO;
-import com.board.study.BoardDTO;
 import com.commons.action.Action;
 import com.commons.action.ActionForward;
+import com.member.study.MemberDAO;
+import com.member.study.MemberDTO;
 
-public class BoardListAction implements Action{
+public class MemberDetailAction implements Action{
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)
 		throws ServletException, IOException {
-		//클라이언트 요청 : 세션객체를 가져온다.
+		request.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
 		String id = (String) session.getAttribute("id");
 		
-		//비지니스 로직 : DB에 접속 후 전체글 목록 검색, 페이징 처리
-		BoardDAO dao = new BoardDAO();
-		ArrayList<BoardDTO> list = dao.getBoardList();	//전체 글 목록 검색
-		request.setAttribute("list", list);
-		
-		//프리젠테이션 로직 : board/boardList.jsp
 		if(id == null) {	//로그인이 되어 있지 않은 상태
-			//ActionForward forward = new ActionForward();
-			//forward.setPath("memberLogin.me");
-			//forward.setRedirect(true);
-			//return forward;
-			
 			response.setContentType("text/html; charset=utf-8");
 			PrintWriter out = response.getWriter();
-			out.println("<script>alert('정상적인 접근방식이 아닙니다!');");
+			out.println("<script>alert('로그인 하시기 바랍니다!');");
 			out.println("location.href='memberLogin.me';</script>");
 			return null;
-		}else {
+		}else {	//로그인 되어 있는 상태
+			String member_id = request.getParameter("member_id");
+			
+			MemberDAO dao = new MemberDAO();
+			MemberDTO dto = dao.getDetailMember(member_id);
+			request.setAttribute("dto", dto);
+			
 			ActionForward forward = new ActionForward();
-			forward.setPath("board/boardList.jsp");
+			forward.setPath("member/memberDetailForm.jsp");
 			forward.setRedirect(false);
 			return forward;
 		}
-	}
+	}	
 }

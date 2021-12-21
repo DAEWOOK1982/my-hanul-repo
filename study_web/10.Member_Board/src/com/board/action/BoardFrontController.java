@@ -33,6 +33,14 @@ public class BoardFrontController extends HttpServlet {
 		if(command.equals("/boardList.bo")) {
 			action = new BoardListAction();
 			forward = action.execute(request, response);
+		}else if(command.equals("/boardWriteForm.bo")) {
+			//글쓰기 화면으로만 이동 : DB 연동X
+			forward = new ActionForward();
+			forward.setPath("board/boardWriteForm.jsp");
+			forward.setRedirect(false);
+		}else if(command.equals("/boardAddAction.bo")) {
+			action = new BoardAddAction();
+			forward = action.execute(request, response);
 		}
 		
 		

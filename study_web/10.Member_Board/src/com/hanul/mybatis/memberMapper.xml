@@ -33,7 +33,15 @@
 		select member_pw from boardMember where member_id = #{id}
 	</select>
 	
-	
+	<update id="updateMember" parameterType="MemberDTO">
+		update boardMember
+			set member_pw = #{member_pw},
+				member_name = #{member_name},
+				member_age = #{member_age},
+				member_gender = #{member_gender},
+				member_email = #{member_email}
+			where member_id = #{member_id}
+	</update>
 	
 	
 	

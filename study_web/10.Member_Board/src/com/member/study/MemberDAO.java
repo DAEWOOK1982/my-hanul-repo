@@ -103,6 +103,16 @@ public class MemberDAO {
 		return member_pw;
 	}//getMember_pw()
 	
+	//회원정보 수정
+	public int updateMember(MemberDTO dto) {
+		SqlSession session = sqlMapper.openSession();
+		int succ = 0;
+		succ = session.update("updateMember", dto);
+		session.commit();
+		session.close();
+		return succ;
+	}//updateMember()
+	
 	
 	
 	

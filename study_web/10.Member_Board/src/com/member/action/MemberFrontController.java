@@ -58,6 +58,15 @@ public class MemberFrontController extends HttpServlet {
 		}else if(command.equals("/memberViewAction.me")) {
 			action = new MemberViewAction();
 			forward = action.execute(request, response);
+		}else if(command.equals("/memberDetailAction.me")) {
+			action = new MemberDetailAction();
+			forward = action.execute(request, response);
+		}else if(command.equals("/memberUpdataAction.me")) {
+			action = new MemberUpdateAction();
+			forward = action.execute(request, response);
+		}else if(command.equals("/memberSecessionAction.me")) {
+			action = new MemberSecessionAction();
+			forward = action.execute(request, response);
 		}
 		
 		
