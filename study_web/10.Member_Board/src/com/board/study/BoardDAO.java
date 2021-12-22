@@ -111,9 +111,66 @@ public class BoardDAO {
 		return list;
 	}//getBoardList()
 	
+	//전체 글의 개수
+	public int getListCount() {
+		conn = getConn();
+		String sql = "select count(*) from memberBoard";
+		int listCount = 0;
+		try {
+			ps = conn.prepareStatement(sql);
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				//listCount = rs.getInt("count(*)");	//Column Label
+				listCount = rs.getInt(1);	//Column Index
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("getListCount() Exception!!!");
+		} finally {
+			dbClose();
+		}
+		return listCount;
+	}//getListCount()
 	
-	
-	
+	//전체 글 목록 검색(Feat : 페이징 처리) → Method OverLoading
+	public ArrayList<BoardDTO> getBoardList(int nowPage, int limit) {
+		conn = getConn();
+		String sql = "select * from ";
+		sql += "(select rownum rnum, board_num, board_id, board_subject, board_content, ";
+		sql += "board_file, board_re_ref, board_re_lev, board_re_seq, board_readcount, board_date from ";
+		sql += "(select * from memberBoard order by board_re_ref desc, board_re_seq asc)) ";
+		sql += "where rnum >= ? and rnum <= ?";
+		
+		int startRow = (nowPage - 1) * limit + 1;	//읽기 시작할 rownum(rnum)
+		int endRow = startRow + limit - 1;			//읽을 마지막 rownum(rnum)
+		
+		ArrayList<BoardDTO> list = new ArrayList<>();
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, startRow);
+			ps.setInt(2, endRow);
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				BoardDTO dto = new BoardDTO();
+				dto.setBoard_num(rs.getInt("board_num"));
+				dto.setBoard_id(rs.getString("board_id"));
+				dto.setBoard_subject(rs.getString("board_subject"));
+				dto.setBoard_content(rs.getString("board_content"));
+				dto.setBoard_file(rs.getString("board_file"));
+				dto.setBoard_re_ref(rs.getInt("board_re_ref"));
+				dto.setBoard_re_lev(rs.getInt("board_re_lev"));
+				dto.setBoard_re_seq(rs.getInt("board_re_seq"));
+				dto.setBoard_date(rs.getDate("board_date"));
+				list.add(dto);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("getBoardList() Exception!!!");
+		} finally {
+			dbClose();
+		}
+		return list;
+	}//getBoardList()
 	
 	
 	

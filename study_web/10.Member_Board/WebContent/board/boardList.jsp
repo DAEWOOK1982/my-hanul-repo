@@ -3,6 +3,7 @@
 <%@page import="com.member.study.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%
 request.setCharacterEncoding("utf-8");
 String id = (String) session.getAttribute("id");
@@ -10,6 +11,10 @@ String id = (String) session.getAttribute("id");
 MemberDAO dao = new MemberDAO();
 String member_pw = dao.getMember_pw(id);
 
+Integer nowPage = (Integer) request.getAttribute("nowPage");
+Integer maxPage = (Integer) request.getAttribute("maxPage");
+Integer startPage = (Integer) request.getAttribute("startPage");
+Integer endPage = (Integer) request.getAttribute("endPage");
 ArrayList<BoardDTO> list = (ArrayList<BoardDTO>) request.getAttribute("list");
 %>
 <!DOCTYPE html>
@@ -68,7 +73,7 @@ function fnSecession(id){
 	--%>
 	
 	<%--
-	<c:if test="${empty list}">		<c:if test="${list eq null}">
+	<c:if test="${empty list}">		
 		<tr><td colspan="5" align="center">작성된 글이 없습니다!</td></tr>
 	</c:if>
 	<c:if test="${!empty list}">	<c:if test="${list ne null}">
@@ -84,11 +89,70 @@ function fnSecession(id){
 	</c:if>
 	--%>
 	
-	
-	
+	<c:if test="${fn:length(list) eq 0}">
+		<tr><td colspan="5" align="center">작성된 글이 없습니다!</td></tr>
+	</c:if>
+	<c:if test="${fn:length(list) ne 0}">
+		<c:forEach var="i" begin="0" end="${fn:length(list) - 1}" step="1">
+			<tr align="center">
+				<td>${list[i].board_num}</td>		
+				<td>${list[i].board_subject}</td>		
+				<td>${list[i].board_id}</td>		
+				<td>${list[i].board_date}</td>		
+				<td>${list[i].board_readcount}</td>		
+			</tr>
+		</c:forEach>
+	</c:if>	
 	
 	<!-- 페이징 처리 -->
+	<%-- 
+	<tr align="center">
+		<td colspan="5">
+			<%if(nowPage <= 1){ %>
+				[이전] 
+			<%}else{%>
+				<a href="boardList.bo?nowPage=<%=nowPage - 1%>">[이전]</a>
+			<%}//if %>			
+			
+			<%for(int i = startPage; i <= endPage; i++){ %>
+				<%if(i == nowPage){ %>
+					[<%=i %>]
+				<%}else{ %>
+					<a href="boardList.bo?nowPage=<%=i%>">[<%=i %>]</a>
+				<%}//if %>
+			<%}//for %>
+			
+			<%if(nowPage >= maxPage){ %>
+				[다음]
+			<%}else{ %>
+				<a href="boardList.bo?nowPage=<%=nowPage + 1%>">[다음]</a>
+			<%}//if %>
+		</td>	
+	</tr>
+	--%>
 	
+	<tr align="center">
+		<td colspan="5">
+			<c:choose>
+				<c:when test="${nowPage le 1}">[이전]&nbsp;&nbsp;&nbsp;</c:when>
+				<c:otherwise>
+					<a href="boardList.bo?nowPage=${nowPage - 1}">[이전]</a>&nbsp;&nbsp;&nbsp;
+				</c:otherwise>
+			</c:choose>
+			
+			<c:forEach var="i" begin="${startPage}" end="${endPage}" step="1">
+				<c:choose>
+					<c:when test="${i eq nowPage}">${i}&nbsp;&nbsp;&nbsp;</c:when>
+					<c:otherwise><a href="boardList.bo?nowPage=${i}">${i}</a>&nbsp;&nbsp;&nbsp;</c:otherwise>
+				</c:choose>
+			</c:forEach>
+			
+			<c:choose>
+				<c:when test="${nowPage ge maxPage}">[다음]&nbsp;&nbsp;&nbsp;</c:when>
+				<c:otherwise><a href="boardList.bo?nowPage=${nowPage + 1}">[다음]</a></c:otherwise>
+			</c:choose>
+		</td>
+	</tr>
 	
 	<!-- 조건검색 -->
 	
