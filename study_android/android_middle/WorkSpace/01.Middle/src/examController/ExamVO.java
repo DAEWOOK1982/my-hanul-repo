@@ -5,6 +5,20 @@ public class ExamVO {
 	 String exam_content ;
 	 String exam_dap ;
 	 int  exam_cnt ;
+	 String user_dap;
+	 public String getUser_dap() {
+		return user_dap;
+	}
+	public void setUser_dap(String user_dap) {
+		this.user_dap = user_dap;
+	}
+	String result ;
+	public String getResult() {
+		return result;
+	}
+	public void setResult(String result) {
+		this.result = result;
+	}
 	public int getNo() {
 		return no;
 	}

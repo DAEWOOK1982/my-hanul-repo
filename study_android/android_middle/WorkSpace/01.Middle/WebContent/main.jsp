@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>시험</h1>
+
 	<input type="text" value="${fn:length(list) }">
 	<form action="grading.exam" method="post">
 

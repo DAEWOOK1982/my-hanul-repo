@@ -27,7 +27,9 @@ android {
     }
     useLibrary 'org.apache.http.legacy'
     /*apacthe httpClient라는 기능을 사용하기위한것.*/
+
 }
+
 
 dependencies {
 

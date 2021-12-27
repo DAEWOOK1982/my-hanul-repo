@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -29,22 +30,31 @@ public class ExamController extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		initMybatis();
+		HttpSession ssn = req.getSession();
+		ssn.setAttribute("admin", "N");
 		if (req.getServletPath().equals("/grading.exam")) {
 			List<ExamVO> list = session.selectList("mybatis.test.lsit");
 			int total_cnt = Integer.parseInt(req.getParameter("tt_cnt") + "");
 			for (int i = 0; i < total_cnt; i++) {
 				String dap = req.getParameter((i + 1) + "");
 				if (list.get(i).getExam_dap().equals(dap)) {
-					System.out.println("맞음");
+					list.get(i).setResult("정답");
+			
 				} else {
-					System.out.println("틀림");
+					list.get(i).setResult("오답");
 				}
+				list.get(i).setUser_dap(dap == null ? "--" : dap);
 			}
+			req.setAttribute("list", list);
+			req.setAttribute("test", "보냄");
+			
+			RequestDispatcher rd = req.getRequestDispatcher("result.jsp");
+			rd.forward(req, resp);
 
 		} else {
 			List<ExamVO> list = session.selectList("mybatis.test.lsit");
 			req.setAttribute("list", list);
-			RequestDispatcher rd = req.getRequestDispatcher("main.jsp");
+			RequestDispatcher rd = req.getRequestDispatcher("index.jsp");
 			rd.forward(req, resp);
 		}
 	}
