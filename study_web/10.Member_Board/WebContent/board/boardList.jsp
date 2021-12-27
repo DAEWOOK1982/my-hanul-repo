@@ -76,7 +76,7 @@ function fnSecession(id){
 	<c:if test="${empty list}">		
 		<tr><td colspan="5" align="center">작성된 글이 없습니다!</td></tr>
 	</c:if>
-	<c:if test="${!empty list}">	<c:if test="${list ne null}">
+	<c:if test="${!empty list}">
 		<c:forEach var="i" items="${list}">
 			<tr align="center">
 				<td>${i.board_num}</td>
@@ -96,14 +96,22 @@ function fnSecession(id){
 		<c:forEach var="i" begin="0" end="${fn:length(list) - 1}" step="1">
 			<tr align="center">
 				<td>${list[i].board_num}</td>		
-				<td>${list[i].board_subject}</td>		
+				<td align="left">
+					<c:if test="${list[i].board_re_lev ne 0}">
+						<c:forEach var="j" begin="1" end="${(list[i].board_re_lev - 1) * 2}" step="1">
+						&nbsp;
+						</c:forEach>
+						ㄴRE : 
+					</c:if>				
+					<a href="boardDetailAction.bo?board_num=${list[i].board_num}">${list[i].board_subject}</a>
+				</td>		
 				<td>${list[i].board_id}</td>		
 				<td>${list[i].board_date}</td>		
 				<td>${list[i].board_readcount}</td>		
 			</tr>
 		</c:forEach>
-	</c:if>	
-	
+	</c:if>
+		
 	<!-- 페이징 처리 -->
 	<%-- 
 	<tr align="center">
@@ -155,7 +163,19 @@ function fnSecession(id){
 	</tr>
 	
 	<!-- 조건검색 -->
-	
+	<tr>
+		<td colspan="5" align="center">
+		 	<form action="boardSearch.bo" method="post">
+		 		<select name="part">
+		 			<option value="board_subject">제목</option>
+		 			<option value="board_content">내용</option>
+		 			<option value="board_id">작성자</option>
+		 		</select>
+		 		<input type="text" name="searchData" required="required"/>
+		 		<input type="submit" value="검색하기"/>
+		 	</form>
+		</td>
+	</tr>
 	
 	<tr>
 		<td colspan="5" align="center">

@@ -41,9 +41,28 @@ public class BoardFrontController extends HttpServlet {
 		}else if(command.equals("/boardAddAction.bo")) {
 			action = new BoardAddAction();
 			forward = action.execute(request, response);
+		}else if(command.equals("/boardDetailAction.bo")) {
+			action = new BoardDetailAction();
+			forward = action.execute(request, response);
+		}else if(command.equals("/boardDeleteAction.bo")) {
+			action = new BoardDeleteAction();
+			forward = action.execute(request, response);
+		}else if(command.equals("/boardModifyView.bo")) {
+			action = new BoardModifyView();
+			forward = action.execute(request, response);
+		}else if(command.equals("/boardModifyAction.bo")) {
+			action = new BoardModifyAction();
+			forward = action.execute(request, response);
+		}else if(command.equals("/boardReplyView.bo")) {
+			action = new BoardReplyView();
+			forward = action.execute(request, response);
+		}else if(command.equals("/boardReplyAction.bo")) {
+			action = new BoardReplyAction();
+			forward = action.execute(request, response);
+		}else if(command.equals("/boardSearch.bo")) {
+			action = new BoardSearchAction();
+			forward = action.execute(request, response);
 		}
-		
-		
 		
 		//3. 프리젠테이션 로직(결과출력) : 페이지 전환 → forward(), sendRedirect() ▶ ActionFoward.java
 		if(forward != null) {
