@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Study_Android/Workspace/New02_FragmentListView/app/src/main/res/layout/activity_list.xml" value="0.2046875" />
+        <entry key="..\:/Study_Android/Workspace/New02_FragmentListView/app/src/main/res/layout/activity_list_cus.xml" value="0.2046875" />
+        <entry key="..\:/Study_Android/Workspace/New02_FragmentListView/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Study_Android/Workspace/New02_FragmentListView/app/src/main/res/layout/activity_test_list_cus.xml" value="0.2046875" />
+        <entry key="..\:/Study_Android/Workspace/New02_FragmentListView/app/src/main/res/layout/fragment1.xml" value="0.2046875" />
+        <entry key="..\:/Study_Android/Workspace/New02_FragmentListView/app/src/main/res/layout/fragment_test01_.xml" value="0.36614583333333334" />
+        <entry key="..\:/Study_Android/Workspace/New02_FragmentListView/app/src/main/res/layout/listitem.xml" value="0.2046875" />
+        <entry key="..\:/Study_Android/Workspace/New02_FragmentListView/app/src/main/res/layout/testlistitem.xml" value="0.2046875" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

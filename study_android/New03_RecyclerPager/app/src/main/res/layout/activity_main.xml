@@ -16,6 +16,12 @@
         android:layout_height="wrap_content"
         android:id="@+id/btn2"
         android:text="※리사클러뷰 커스텀 어댑터 사용하기※"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn3"
+        android:text="※Pager2 xml 사용※"/>
+
 
 
 </LinearLayout>
