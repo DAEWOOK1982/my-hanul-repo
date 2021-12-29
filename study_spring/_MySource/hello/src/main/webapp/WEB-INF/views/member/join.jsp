@@ -27,7 +27,7 @@
 		</table>
 		<input type="submit" value="HttpServletRequest" onclick="action='joinRequest'">
 		<input type="submit" value="@RequestParam" onclick="action='joinParam'">
-		<input type="submit" value="데이터객체" onclick="action='joinDataObject'">
+		<input type="submit" value="데이터객체"	onclick="action='joinDataObject'">
 	</form>
 </body>
 </html>
