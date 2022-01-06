@@ -27,8 +27,18 @@
 		</table>
 		<input type="submit" value="HttpServletRequest" onclick="action='joinRequest'">
 		<input type="submit" value="@RequestParam" onclick="action='joinParam'">
-		<input type="submit" value="데이터객체"	onclick="action='joinDataObject'">
+		<input type="submit" value="데이터객체" onclick="action='joinDataObject'">
+		<input type="submit" value="@PathVariable" onclick="go_submit(this.form)" >				
 	</form>
+	
+	<script type="text/javascript">
+	function go_submit(f) {
+	//	f.action = 'joinPath/홍길동/남/test@hanul.com' 이런 형태로 값을 전달
+		f.action = 'joinPath/' + f.name.value + '/' 
+			+ f.gender.value + '/' + f.email.value;
+	}
+	</script>
+	
 </body>
 </html>
 
