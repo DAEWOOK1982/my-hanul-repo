@@ -12,7 +12,8 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:src="@drawable/ic_launcher_foreground"/>
+        android:src="@drawable/ic_launcher_foreground"
+        />
 
     <TextView
         android:layout_width="match_parent"
@@ -20,11 +21,13 @@
         android:text="가이드를 시작합니다"
         android:textSize="30dp"
         android:gravity="center"/>
-
     <Button
+        android:text="스킵"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btn1"
-        android:text="skip"/>
+        android:id="@+id/btn1"/>
+
+
+
 
 </LinearLayout>
