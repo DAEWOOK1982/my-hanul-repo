@@ -17,4 +17,14 @@ public interface MemberService {
 	boolean member_delete(String id);
 	// 아이디 중복확인 (R)
 	boolean member_id_check(String id);
+	
+	// 소셜 회원 정보 존재여부 (R)
+	boolean member_social_email(MemberVO vo);
+	
+	// 소셜 회원 정보 신규 저장 (C)
+	boolean member_social_insert(MemberVO vo);
+	
+	// 소셜 회원 정보 변경 저장 (U)
+	boolean member_social_update(MemberVO vo);
+
 }

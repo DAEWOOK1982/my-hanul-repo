@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 <style type="text/css">
 #login { width: 70%; padding: 50px 0; float: left; }
+img.social { width : 200px; height: 45px; }
 #userid, #userpw { width: 48%; padding: 5px 10%; margin-bottom: 10px;}
 .join {float: right; width: 30%; padding: 210px 0; background: #c2c2c2;}
 /* .join div {position: absolute;top: 50%; left: 85%; transform: translate(-50%, -50%); } */
@@ -21,10 +22,10 @@
 			<a href='<c:url value="/" />'><img src="imgs/hanul.logo.png"></a>
 		</div>
 		<div>
-			<a href=''></a>
-			<a href=''></a>
+			<a href='naverLogin'><img src='imgs/naver_login.png' class='social' /></a>
+			<a href='kakaoLogin'><img src='imgs/kakao_login.png' class='social' /></a>
 			<div style="width: 80%; margin: 25px auto; border: 1px solid #ccc"></div>
-				<input type="text" placeholder="아이디" id='userid' />
+				<input type="text" placeholder="아이디" id='userid' autofocus />
 				<input type="password" placeholder="비밀번호" id='userpw'
 					onkeypress="if (event.keyCode == 13) { go_login() }" />
 					<!-- onkeypress를 통해 Enter 키를 눌렀을 때 go_login() 동작 -->
@@ -34,7 +35,7 @@
 	</div>
 	<div class='join'>
 		<div>Hello, Guest!<br>
-			<a href="btn-fill">회원가입</a>
+			<a class="btn-fill">회원가입</a>
 		</div>
 	</div>
 </div>
