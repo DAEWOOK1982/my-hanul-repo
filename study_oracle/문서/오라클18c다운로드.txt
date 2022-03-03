@@ -1,0 +1,10 @@
+방법1.
+
+[URL]
+https://www.oracle.com/database/technologies/xe18c-downloads.html
+
+※ 오라클의 잦은 업데이트로 다운로드페이지에서 쉽게 찾기 어려우니, 위 URL을 복붙해서 다운로드 받으세요
+
+방법2.
+oracle.com 접속 후 검색에서 18c로 검색 - 
+Oracle Database Express Edition (XE) 18c Downloads 클릭 후 다운로드
